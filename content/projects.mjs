@@ -9,7 +9,7 @@ export const projects = [
       S('My contribution', 'At Huawei, I developed RLHF post-training pipelines covering synthetic data generation, training-data quality controls, reward modelling and PPO. My work connects data preparation, model training and evaluation rather than treating these as separate experiments.'),
       S('Training workflow', 'The workflow includes supervised fine-tuning and reinforcement learning from feedback. I fine-tuned and post-trained language models in multi-GPU environments using DeepSpeed and mixed precision, and used vLLM for inference.', 'Quality checks on training examples and evaluation of generated outputs support iteration on the data and reward signal. This makes it possible to inspect where a change helps and where it introduces a new failure mode.'),
       S('What this work demonstrates', 'Hands-on experience across the post-training cycle: preparing training data, implementing learning pipelines, running distributed experiments and evaluating the resulting behaviour.')
-    ], { role: 'Staff ML Engineer', period: '2025–present', featured: true, visual: 'training', links: [['Feedback bias auditing', 'huawei-feedback-auditing.html']] }),
+    ], { role: 'Staff ML Engineer', period: '2025–present', featured: true, visual: 'training' }),
   P('huawei-on-device', 'Huawei', 'On-device VESO embeddings for HarmonyOS',
     'Porting embedding models to an ArkTS app with MindSpore Lite, reaching MRR 0.80 on device versus 0.81 in Python.',
     ['HarmonyOS', 'OpenHarmony', 'MindSpore Lite', 'ArkTS', 'Rust', 'C FFI', 'NAPI', 'ByteLevel BPE'], [
@@ -28,14 +28,6 @@ export const projects = [
       S('Distributed execution and evaluation', 'I resolved NCCL communication issues, DDP race conditions and NFS-related problems that affected distributed runs. Evaluation used MTEB to assess the retriever beyond the training loss.'),
       S('Delivery', 'The work produced a repaired distributed training pipeline, retrieval evaluation, merge requests and documentation in Confluence. It brings together model design, training correctness, multi-GPU infrastructure and reproducible evaluation.')
     ], { role: 'Staff ML Engineer', period: '2025–present', links: [['Corpus & reranking work', 'huawei-code-search.html'], ['On-device deployment', 'huawei-on-device.html']] }),
-  P('huawei-feedback-auditing', 'Huawei', 'BCRM: auditing bias in human feedback',
-    'A framework covering 40 types of annotator bias, with R-score, Q-score and bias-aware reward modelling.',
-    ['RLHF', 'BCRM', 'R-score', 'Q-score', 'Bias auditing', 'Reward modelling', 'Python'], [
-      S('The problem', 'Human annotations carry both useful supervision and systematic differences between evaluators. If those differences pass directly into a reward model, the training signal can reflect the biases in the feedback.'),
-      S('My contribution', 'I developed the BCRM / R-score framework as a distinct research and engineering component of the feedback pipeline. It covers 40 types of annotator bias and uses R-score and Q-score to assess the feedback used for model training.'),
-      S('From auditing to the reward model', 'The work connects analysis of annotations with a reward model that accounts for detected biases. This extends the post-training workflow upstream: inspecting the supervision becomes part of preparing the learning signal.', 'The project combines feedback-quality analysis, scoring and reward modelling. The related research case describes the statistical methodology and the evidence reported in the manuscript.'),
-      S('Research output', 'The work led to a manuscript submitted to EMNLP. This case describes the framework and its role in the training pipeline; the linked research page preserves the study design and reported results.')
-    ], { role: 'Staff ML Engineer / ML researcher', period: '2025–present', links: [['Research methods & results', 'research-feedback.html'], ['Post-training pipeline', 'huawei-rlhf.html']] }),
   P('huawei-evaluation', 'Huawei', 'LLM evaluation workflows',
     'Evaluation frameworks for generated outputs and agents, including RAG-based assessment and LoCoBench-Agent.',
     ['Python', 'LLM evaluation', 'Agent evaluation', 'LoCoBench-Agent', 'RAG', 'Benchmark design'], [
@@ -199,15 +191,6 @@ export const projects = [
       S('Outcome', 'A more explicit connection between channel spend, audience composition and long-term value. This provided a basis for reviewing inefficient channels and testing changes in allocation.')
     ], { role: 'Senior Data Analyst', period: '2021–2023', note: 'vk-7' }),
 
-  P('research-feedback', 'Research', 'Auditing human feedback for RLHF',
-    'Studying how evaluator reliability and systematic bias affect code-evaluation feedback.',
-    ['RLHF', 'Bayesian updating', 'Permutation tests', 'Markov chains', 'Monte Carlo'], [
-      S('Research question', 'Human feedback is a training signal, but evaluators can differ in reliability and in how they judge an answer. This work asks how to inspect those differences before treating pairwise preferences as ground truth.'),
-      S('My contribution', 'I co-developed a bias-auditing framework for RLHF code evaluation, combining evaluator-level reliability estimation with statistical tests and a Bayesian quality filter.'),
-      S('Methods and evidence', 'The study uses 305 sessions from 50 raters evaluating 267 CoNaLa code pairs. The methodology includes permutation tests with false-discovery-rate control and a Markov-chain Bayesian quality filter.', 'The manuscript reports validation of the quality estimator with 20,000 Monte Carlo replications. Calibration changed 3.7% of pairwise quality verdicts, with external checks against execution- and reference-based signals.'),
-      S('Interpretation', 'The contribution is a method for examining the feedback used in training. A changed verdict is not automatically a corrected verdict, so external checks and the assumptions behind calibration remain part of the analysis.'),
-      S('Status', 'Manuscript under review: “Annotator Bias Auditing for RLHF: Methodological Approach to Code-Evaluation Adjustment”, coauthored with S. V. Kovalchuk. Results above are those reported in the manuscript.')
-    ], { role: 'Coauthor / ML researcher', period: 'Current research', featured: true, visual: 'research', links: [['BCRM framework at Huawei', 'huawei-feedback-auditing.html']] }),
   P('research-oversight', 'Research', 'Game-theoretic models of human oversight',
     'Modelling the incentives behind human verification, delegation and AI assistance.',
     ['Game theory', 'Nash equilibria', 'QRE', 'Replicator dynamics', 'Python'], [
@@ -216,15 +199,7 @@ export const projects = [
       S('Methods', 'The work includes mixed-strategy Nash equilibria computed by support enumeration, best-response analysis and replicator dynamics. The role model also uses logit quantal response equilibrium to represent noisy responses.', 'Sensitivity analysis covered 2,772 variants of the role game. Algebraic analysis and parameter-recovery simulations investigated whether payoff weights could be identified from the available behaviour.'),
       S('What the analysis establishes', 'The work makes assumptions and their consequences explicit. It also examines limits: an equilibrium calculation is conditional on the specified payoffs, and a model that fits behaviour does not necessarily identify the underlying preferences.'),
       S('Related presentation', 'The role-based human–AI interaction work was presented at the XI International Conference on Cognitive Science in August 2026.')
-    ], { role: 'ML researcher', period: 'Current research', links: [['Cognitive Science 2026 talk', 'cogsci-2026.html']] }),
-  P('research-preferences', 'Research', 'Identifiability of human preferences',
-    'Investigating when predictive coefficients do not identify the trade-offs people can actually make.',
-    ['Profile likelihood', 'Identifiability', 'Simulation', 'Statistics'], [
-      S('Research question', 'A predictive model may describe observed decisions well while failing to identify meaningful preference trade-offs. This is especially important when the data occupy a bounded or restricted region of the possible choices.'),
-      S('My contribution', 'I coauthored a formal analysis of when regression coefficients fail to identify feasible preference substitution. The work connects statistical diagnostics with a case study of reliance on AI-generated code.'),
-      S('Methods and evidence', 'The analysis uses profile-likelihood and support-based diagnostics, with simulation studies and 1,720 code-adoption judgements from 10 evaluators.', 'The code-adoption case concerns perceived correctness and observed acceptance decisions. It does not equate a participant’s perception with the objective correctness of a program.'),
-      S('Contribution and status', 'The contribution is a clearer account of what can and cannot be inferred from fitted coefficients under limited support. The coauthored manuscript “When People Don’t Trade Off What We Think They Do: Support-Feasible Substitution on Bounded Adoption Surfaces, with a Case in AI-Generated Code” is under review.')
-    ], { role: 'Coauthor / ML researcher', period: 'Current research' }),
+    ], { role: 'ML researcher', period: 'Current research', featured: true, visual: 'research', links: [['Cognitive Science 2026 talk', 'cogsci-2026.html']] }),
   P('research-cognitive-critic', 'Research', 'Cognitively informed AI feedback',
     'Integrating a cognitive critic into reinforcement learning from AI feedback for code generation.',
     ['RLAIF', 'Reward modelling', 'SFT', 'Contrastive learning', 'Markov chains'], [

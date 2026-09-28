@@ -53,7 +53,7 @@
 <div class="role-intro">
 <h2>Language models, retrieval and on-device ML.</h2>
 <ul class="role-highlights">
-<li>RLHF, reward modelling and bias auditing for human feedback.</li>
+<li>RLHF, reward modelling and training-data quality controls.</li>
 <li>VESO-4 retriever training with DDP; code search and graph-based retrieval.</li>
 <li>On-device VESO embeddings with MindSpore Lite, ArkTS and Rust.</li>
 <li>Model and agent evaluation, including LoCoBench-Agent.</li>
@@ -61,7 +61,7 @@
 </div>
 <div class="section-heading">
 <h2>Projects & contributions</h2>
-<p>8 detailed case studies</p>
+<p>7 detailed case studies</p>
 </div>
 <div class="project-grid">
 <article class="project-card" data-project data-category="Huawei" data-search="llm post-training &amp; alignment huawei building the training loop from synthetic data and reward models to distributed fine-tuning and evaluation. python pytorch deepspeed sft ppo rlhf vllm post-training connects a language model’s capabilities to the behaviour a task actually requires. the quality of the feedback, the reward signal and the evaluation process matters as much as the optimisation itself. at huawei, i developed rlhf post-training pipelines covering synthetic data generation, training-data quality controls, reward modelling and ppo. my work connects data preparation, model training and evaluation rather than treating these as separate experiments. the workflow includes supervised fine-tuning and reinforcement learning from feedback. i fine-tuned and post-trained language models in multi-gpu environments using deepspeed and mixed precision, and used vllm for inference. quality checks on training examples and evaluation of generated outputs support iteration on the data and reward signal. this makes it possible to inspect where a change helps and where it introduces a new failure mode. hands-on experience across the post-training cycle: preparing training data, implementing learning pipelines, running distributed experiments and evaluating the resulting behaviour.">
@@ -109,22 +109,6 @@
 <li>CodeAwarePooling</li>
 </ul>
 <a class="text-link" href="huawei-veso-training.html">Explore project <span aria-hidden="true">↗</span>
-</a>
-</div>
-</article>
-<article class="project-card" data-project data-category="Huawei" data-search="bcrm: auditing bias in human feedback huawei a framework covering 40 types of annotator bias, with r-score, q-score and bias-aware reward modelling. rlhf bcrm r-score q-score bias auditing reward modelling python human annotations carry both useful supervision and systematic differences between evaluators. if those differences pass directly into a reward model, the training signal can reflect the biases in the feedback. i developed the bcrm / r-score framework as a distinct research and engineering component of the feedback pipeline. it covers 40 types of annotator bias and uses r-score and q-score to assess the feedback used for model training. the work connects analysis of annotations with a reward model that accounts for detected biases. this extends the post-training workflow upstream: inspecting the supervision becomes part of preparing the learning signal. the project combines feedback-quality analysis, scoring and reward modelling. the related research case describes the statistical methodology and the evidence reported in the manuscript. the work led to a manuscript submitted to emnlp. this case describes the framework and its role in the training pipeline; the linked research page preserves the study design and reported results.">
-<div class="card-content">
-<p class="card-meta">Huawei <span> / </span> 2025–present</p>
-<h3>
-<a href="huawei-feedback-auditing.html">BCRM: auditing bias in human feedback</a>
-</h3>
-<p>A framework covering 40 types of annotator bias, with R-score, Q-score and bias-aware reward modelling.</p>
-<ul class="tags" aria-label="Methods and tools">
-<li>RLHF</li>
-<li>BCRM</li>
-<li>R-score</li>
-</ul>
-<a class="text-link" href="huawei-feedback-auditing.html">Explore project <span aria-hidden="true">↗</span>
 </a>
 </div>
 </article>
