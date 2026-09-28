@@ -6,6 +6,7 @@ export const profile = {
   base: 'https://kliuchnikovaps.github.io/tapelich/',
   updated: '2026-09-28',
   cv: 'assets/documents/Polina_Kliuchnikova_CV.pdf',
+  portrait: { src: 'assets/png/profile3-cutout.png', width: 1137, height: 1383 },
   socials: [
     ['LinkedIn', 'https://www.linkedin.com/in/kliuchnikova-ps/'],
     ['GitHub', 'https://github.com/kliuchnikovaps'],
@@ -56,8 +57,12 @@ export const talks = [
     ],
     // Add a local path or an HTTPS URL to show each button. Empty fields stay hidden.
     video: '', slides: '',
+    certificate: 'assets/documents/conferences/cogsci-2026-speaker-certificate.png',
+    photo: 'assets/jpeg/conferences/cogsci-2026-speaking.jpg',
+    photoAlt: 'Polina Kliuchnikova presenting her human–AI role model beside a slide on game-theoretic equilibria at the XI International Conference on Cognitive Science.',
+    photoCaption: 'Presenting the role-based model of human–AI collaboration in Nizhny Novgorod, August 2026.',
     sources: [['Conference website', 'https://cogsci.neimark-it.ru/'], ['Official programme', 'https://disk.yandex.ru/i/WxBNqiVYyOjlTA']],
-    related: ['research-oversight', 'research-preferences'], label: 'Human–AI interaction'
+    related: ['research-oversight', 'research-preferences'], label: 'Human–AI interaction · MAKI'
   },
   {
     id: 'aij', event: 'AI Journey 2024', date: '11–13 December 2024', location: 'Moscow · Science track',
