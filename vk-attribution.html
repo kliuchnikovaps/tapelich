@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Marketing attribution &amp; channel value | Polina Kliuchnikova</title>
+<meta name="description" content="Connecting acquisition journeys, player value and campaign economics to budget decisions.">
+<meta name="theme-color" content="#5424a3">
+<link rel="canonical" href="https://tanasevichps.github.io/tapelich/vk-attribution.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Marketing attribution &amp; channel value | Polina Kliuchnikova">
+<meta property="og:description" content="Connecting acquisition journeys, player value and campaign economics to budget decisions.">
+<meta property="og:url" content="https://tanasevichps.github.io/tapelich/vk-attribution.html">
+<meta property="og:image" content="https://tanasevichps.github.io/tapelich/assets/png/social-card.png">
+<link rel="icon" href="assets/svg/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/portfolio.css">
+<script src="index.js" defer>
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+<div class="header-inner">
+<a class="brand" href="index.html" aria-label="Polina Kliuchnikova — home">
+<span class="monogram" aria-hidden="true">pk<span>.</span>
+</span>
+<span>Polina<br>
+<strong>Kliuchnikova</strong>
+</span>
+</a>
+<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu <span aria-hidden="true">☰</span>
+</button>
+<nav id="main-nav" class="main-nav" aria-label="Main navigation">
+<a href="index.html#about">About</a>
+<a href="index.html#experience">Experience</a>
+<a href="projects.html" aria-current="page">Projects</a>
+<a href="research.html">Research</a>
+<a href="talks.html">Talks</a>
+<a class="nav-contact" href="index.html#contact">Let’s talk <span aria-hidden="true">↗</span>
+</a>
+</nav>
+</div>
+</header>
+<main id="main">
+<section class="page-hero">
+<div class="wrap">
+<p class="eyebrow">VK / MY.GAMES / 2021–2023</p>
+<h1>Marketing attribution &amp; channel value</h1>
+<p class="page-intro">Connecting acquisition journeys, player value and campaign economics to budget decisions.</p>
+<div class="button-row">
+<a class="button button-secondary" href="projects.html">All projects <span aria-hidden="true">↗</span>
+</a>
+</div>
+</div>
+</section>
+<div class="wrap case-layout">
+<aside class="case-sidebar">
+<p class="eyebrow">Project at a glance</p>
+<dl>
+<dt>Context</dt>
+<dd>VK / MY.GAMES</dd>
+<dt>My role</dt>
+<dd>Senior Data Analyst</dd>
+<dt>Period</dt>
+<dd>2021–2023</dd>
+</dl>
+<h2 class="sidebar-title">Methods & tools</h2>
+<ul class="tags" aria-label="Methods and tools">
+<li>Python</li>
+<li>SQL</li>
+<li>Attribution</li>
+<li>LTV / CAC</li>
+<li>Segmentation</li>
+</ul>
+<nav aria-label="On this page">
+<h2 class="sidebar-title">In this case</h2>
+<a href="#section-0">The problem</a>
+<a href="#section-1">My contribution</a>
+<a href="#section-2">Approach</a>
+<a href="#section-3">Outcome</a>
+<a href="#original-notes">Original notes</a>
+</nav>
+<button class="print-button" type="button" data-print hidden>Print / save as PDF</button>
+</aside>
+<article class="case-body">
+<section class="case-section" id="section-0">
+<h2>The problem</h2>
+<p>Acquisition volume alone does not show whether a channel brings players who stay and pay. The marketing team needed a more useful comparison of channel cost and the value of the acquired audience.</p>
+</section>
+<section class="case-section" id="section-1">
+<h2>My contribution</h2>
+<p>I analysed acquisition journeys and channel economics, combining marketing information with player behaviour and payments. The work supported discussion of budget allocation and audience quality.</p>
+</section>
+<section class="case-section" id="section-2">
+<h2>Approach</h2>
+<p>The analysis compared acquisition cost with predicted or observed player value and examined differences between segments. It also explored multi-touch attribution to move beyond a purely last-click view.</p>
+<p>The original notes discuss Shapley-style attribution. The short illustrative code in those notes is a heuristic, not an exact implementation of the Shapley value; attribution estimates should also not be interpreted as causal effects without additional identification assumptions.</p>
+</section>
+<section class="case-section" id="section-3">
+<h2>Outcome</h2>
+<p>A more explicit connection between channel spend, audience composition and long-term value. This provided a basis for reviewing inefficient channels and testing changes in allocation.</p>
+</section>
+<details class="original-notes" id="original-notes">
+<summary>Original project notes <span>Detailed reference</span>
+</summary>
+<div class="notes-inner">
+<p class="note-intro">Preserved from my earlier portfolio for a complete record of the project. These historical notes include the original wording, code sketches and reported measurements, which have not been revalidated here. The edited case study above is the current overview.</p>
+<div class="archival-text" lang="ru">7. Атрибуция рекламных каналов
+
+Проблема и цели
+
+Исходные данные:
+
+Маркетинговый бюджет $NDA/мес распределен между 10+ каналами
+
+CPA (Cost Per Acquisition) превышает плановый на 25%, LTV/CAC = 1.2 (при целевом ≥ 1.5).
+
+Нет понимания, какие каналы реально приводят платящих игроков.
+
+Цели:
+
+Снизить CPA на 20% за счет перераспределения бюджета.
+
+Повысить LTV/CAC до 1.5+ через отсев неэффективных каналов.
+
+Определить вклад каждого канала в конверсию (атрибуция).
+
+Методология
+
+Сбор данных
+
+Источники:
+
+Рекламные платформы (Facebook Ads, TikTok For Business, AppsFlyer).
+
+Игровая аналитика (SDK Firebase, внутренние логи).
+
+Платежи (Stripe, App Store Connect).
+
+Модель атрибуции (Shapley Value)
+
+Почему Shapley Value?
+
+Учитывает вклад каждого канала в цепочке взаимодействий (не только last-click).
+
+Работает с коалициями (например, TikTok → Facebook → Конверсия).
+
+Реализация:
+
+from itertools import permutations
+
+import numpy as np
+
+def shapley_value(user_journeys, conversions):
+
+channels = set([c for journey in user_journeys for c in journey])
+
+shapley = {c: 0 for c in channels}
+
+for channel in channels:
+
+for journey, conv in zip(user_journeys, conversions):
+
+if channel in journey:
+
+idx = journey.index(channel)
+
+marginal_gain = conv - (conv * 0.5 if idx &gt; 0 else 0) # Упрощенный расчет
+
+shapley[channel] += marginal_gain / len(user_journeys)
+
+return shapley
+
+Расчет LTV/CAC по кластерам
+
+Кластеризация игроков:
+
+Кластер 1: &quot;Киты&quot; (LTV $NDA, CAC $NDA).
+
+Кластер 2: &quot;Середняки&quot; (LTV $NDA, CAC $NDA).
+
+Кластер 3: &quot;Новички&quot; (LTV $NDA, CAC $NDA).
+
+Оптимизация:
+
+Увеличить бюджет на каналы, привлекающие Кластер 1.
+
+Исключить каналы с CAC &gt; LTV .
+
+Действия по каналам
+
+Chanel 1:
+
+Увеличение бюджета на 36%.
+
+Запуск креативов с упором на социальные взаимодействия (гильдии, PvP).
+
+Chanel 2:
+
+Снижение бюджета на 18%, фокус на ретаргетинг.
+
+Chanel 3:
+
+Полный отказ от 3 из 5 сетей (экономия $NDA/мес).
+
+Итог:
+- Перераспределение бюджета в пользу NDA (+15% к конверсии).
+
+- Отказ от неэффективных партнерских сетей.
+
+- Эффективность каналов после оптимизации - (CPA -23%, LTV +42%, Конверсия +15%)</div>
+</div>
+</details>
+<div class="case-bottom">
+<a class="text-link" href="projects.html">Back to all projects <span aria-hidden="true">↗</span>
+</a>
+<a class="text-link" href="index.html#contact">Contact me <span aria-hidden="true">↗</span>
+</a>
+</div>
+</article>
+</div>
+</main>
+<footer class="site-footer">
+<div class="wrap footer-main">
+<div>
+<a class="footer-name" href="index.html">Polina Kliuchnikova<span>.</span>
+</a>
+<p>Machine learning, applied mathematics<br>and the people who work with AI.</p>
+</div>
+<div class="footer-links">
+<a class="text-link" href="https://www.linkedin.com/in/kliuchnikova-ps/">LinkedIn <span aria-hidden="true">↗</span>
+</a>
+<a class="text-link" href="https://github.com/TanasevichPS">GitHub <span aria-hidden="true">↗</span>
+</a>
+<a class="text-link" href="https://scholar.google.com/citations?user=6XguSygAAAAJ">Google Scholar <span aria-hidden="true">↗</span>
+</a>
+<a class="text-link" href="https://istina.msu.ru/workers/251795028/">ISTINA <span aria-hidden="true">↗</span>
+</a>
+<a class="text-link" href="mailto:pskliuchnikova@outlook.com">Email <span aria-hidden="true">↗</span>
+</a>
+</div>
+</div>
+<div class="wrap footer-bottom">
+<span>© 2026 Polina Kliuchnikova</span>
+<span>Earlier publications: Polina S. Tanasevich</span>
+<a class="text-link" href="projects.html">All projects <span aria-hidden="true">↗</span>
+</a>
+</div>
+</footer>
+</body>
+</html>

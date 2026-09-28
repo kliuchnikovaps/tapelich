@@ -1,742 +1,214 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Description of VK projects</title>
-    <meta name="description" content="description of VK projects" />
-
-    <link rel="stylesheet" href="css/style.css" />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;900&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <header class="header">
-      <div class="header__content">
-        <div class="header__logo-container">
-          <div class="header__logo-img-cont">
-            <img
-              src="./assets/png/profile.png"
-              alt="Ram Maheshwari Logo Image"
-              class="header__logo-img"
-            />
-          </div>
-          <span class="header__logo-sub">Polina Tanasevich</span>
-        </div>
-        <div class="header__main">
-          <ul class="header__links">
-            <li class="header__link-wrapper">
-              <a href="./index.html" class="header__link"> Home </a>
-            </li>
-            <li class="header__link-wrapper">
-              <a href="./index.html#about" class="header__link">About </a>
-            </li>
-            <li class="header__link-wrapper">
-              <a href="./index.html#conferences" class="header__link">
-                Conferences
-              </a>
-            </li>
-            <li class="header__link-wrapper">
-              <a href="./index.html#contact" class="header__link"> Contact </a>
-            </li>
-          </ul>
-          <div class="header__main-ham-menu-cont">
-            <img
-              src="./assets/svg/ham-menu.svg"
-              alt="hamburger menu"
-              class="header__main-ham-menu"
-            />
-            <img
-              src="./assets/svg/ham-menu-close.svg"
-              alt="hamburger menu close"
-              class="header__main-ham-menu-close d-none"
-            />
-          </div>
-        </div>
-      </div>
-      <div class="header__sm-menu">
-        <div class="header__sm-menu-content">
-          <ul class="header__sm-menu-links">
-            <li class="header__sm-menu-link">
-              <a href="./index.html"> Home </a>
-            </li>
-
-            <li class="header__sm-menu-link">
-              <a href="./index.html#about"> About </a>
-            </li>
-
-            <li class="header__sm-menu-link">
-              <a href="./index.html#conferences"> Conferences </a>
-            </li>
-
-            <li class="header__sm-menu-link">
-              <a href="./index.html#contact"> Contact </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </header>
-    <section class="project-cs-hero">
-      <div class="project-cs-hero__content">
-        <h1 class="heading-primary">Senior Game Analyst</h1>
-        <div class="project-cs-hero__info">
-          <p class="text-primary">
-            Building ML-powered gaming analyticssolutions—predicting LTV, optimizing promotions, and analyzing player behavior—to increase revenue
-            and engagement while reducing CAC.
-          </p>
-        </div>
-        <div class="project-cs-hero__cta">
-          <a href="https://github.com/TanasevichPS/geo_embeddings" class="btn btn--bg" target="_blank">Private Repo</a>
-        </div>
-      </div>
-    </section>
-    <section class="project-details">
-      <div class="main-container">
-        <div class="project-details__content">
-          <div class="project-details__showcase-img-cont">
-            <img
-              src="./assets/jpeg/nte_start.png"
-              alt="Project Image"
-              class="project-details__showcase-img"
-            />
-          </div>
-          <div class="project-details__content-main">
-            <div class="project-details__desc">
-              <h3 class="project-details__content-title">Overview</h3>
-              <p class="project-details__desc-para">
-                <strong> 1.	 Developed LTV prediction models, increasing revenue by 12% through enhanced user segmentation and retention </strong> <br/>
-                Проект: Прогнозирование LTV с кластеризацией и LightGBM <br/>  
-              Цель:<br/>  
-              Увеличить доход на 12% за счет точного прогнозирования Lifetime Value (LTV) игроков, сегментации аудитории и оптимизации ретеншен-стратегий.<br/>
-                        
-              1. Этапы реализации <br/>
-              
-              1.1. Подготовка данных<br/>
-              Источники данных:<br/>  
-              - Логи игровых сессий (активность, время в игре).  <br/>
-              - Платежи (суммы, частота, история транзакций).  <br/>
-              - Демография (регион, устройство, возраст аккаунта).  <br/>
-              - Участие в ивентах (прогресс, награды).  <br/>
-              
-              ETL-процесс:<br/>  
-              - Инструменты:<br/> Python (Pandas, PySpark), SQL (PostgreSQL).  
-              - Шаги:<br/>  
-                - Агрегация сырых данных в признаки на уровне пользователя (RFM-метрики):  <br/>  
-                <p>Пример реализации:</p>
-                 <p><code> 
-                  features = df.groupby('user_id').agg({<br/> 
-                      'session_duration': 'sum',<br/> 
-                      'payment_amount': ['sum', 'count', 'max'],<br/> 
-                      'last_login': 'max',<br/> 
-                      'event_participation': 'mean'<br/> 
-                  })
-                  </code></p>
-                - Нормализация данных (StandardScaler).  <br/>  
-               </p>
-              <p class="project-details__desc-para">
-              
-              1.2. Кластеризация игроков (K-means) <br/>  
-              Цель- Сегментировать игроков на однородные группы для персонализации стратегий.  <br/>  
-              
-              Метод:<br/>  
-              - Алгоритм: K-means (Scikit-learn).  <br/>  
-              - Определение числа кластеров: Метод локтя (Elbow Method) по SSE (Sum of Squared Errors).  <br/>  
-              <p>Пример реализации:</p>
-                <p><code>
-                from sklearn.cluster import KMeans<br/> 
-                sse = []<br/> 
-                for k in range(1, 10):<br/> 
-                    kmeans = KMeans(n_clusters=k, random_state=42).fit(features)<br/> 
-                    sse.append(kmeans.inertia_)<br/> 
-                plt.plot(range(1, 10), sse, marker='o') <br/> 
-                plt.xlabel('Количество кластеров') <br/> 
-                plt.ylabel('SSE') <br/> 
-                </p></code>
-               </p>
-              <p class="project-details__desc-para">
-              Оптимальное число кластеров — 5 (точка изгиба на графике).  <br/> 
-              
-              
-                </p>
-          <p class="project-details__desc-para">
-         Результат кластеризации:<br/>  
-          <table>
-            <tr>
-               <td>Кластер</td>
-                <td> Характеристики</td>
-              </tr>
-            <tr>
-                <td>1 </td>
-                <td>Высокодоходные, редкие платежи (киты)</td>
-            </tr>
-            <tr>
-               <td>2 </td>
-                <td>Частые, но мелкие платежи (постоянные) </td>
-            </tr>
-            <tr>
-               <td>3 </td>
-                <td> Новые игроки с низкой активностью </td>
-            </tr>
-            <tr>
-               <td>4 </td>
-                <td>Возвращающиеся, средние платежи</td>
-            </tr>
-            <tr>
-               <td>5 </td>
-                <td>  Неплатящие, но активные </td>
-            </tr>
-            </table> 
-                </p>
-          <p class="project-details__desc-para">
-              
-              
-              1.3. Прогнозирование LTV (LightGBM)<br/>  
-              Цель: Предсказать LTV для каждого кластера.  <br/> 
-              
-              Модель:<br/>  
-              - Алгоритм: LightGBM (градиентный бустинг).  <br/> 
-              - Признаки:<br/>  
-                - RFM-метрики (Recency, Frequency, Monetary).  <br/> 
-                - Активность за последние 7/30 дней.  <br/> 
-                - Участие в ивентах.  <br/> 
-              - Целевая переменная: Сумма платежей за 90 дней.  <br/> 
-              
-              Обучение:<br/>  
-              <p>Пример реализации:</p>
-             <p><code>
-              import lightgbm as lgb <br/>  
-              from sklearn.model_selection import train_test_split <br/>  
-              
-              X_train, X_test, y_train, y_test = train_test_split(features, target, test_size=0.2) <br/>  
-              model = lgb.LGBMRegressor(n_estimators=500, learning_rate=0.05) <br/>  
-              model.fit(X_train, y_train, eval_set=[(X_test, y_test)], early_stopping_rounds=50) <br/>  
-             </code></p>
-               </p>
-              <p class="project-details__desc-para">
-              Метрики:<br/>  
-              - RMSE: 120 (руб)  <br/>  
-              - R²: 0.89  <br/>  
-              
-              1.4. Автоматизация и мониторинг<br/>  
-              Airflow: <br/>  
-              - Даг: Еженедельный перерасчет LTV.  <br/>  
-              <p>Пример реализации:</p>
-                <p><code>
-                from airflow import DAG <br/> 
-                from airflow.operators.python_operator import PythonOperator <br/> 
-              
-                def update_ltv(): <br/> 
-                    # Загрузка данных, кластеризация, прогноз<br/> 
-                    pass
-              
-                dag = DAG('ltv_prediction', schedule_interval='0 3 * * MON', start_date=datetime(2023, 1, 1)) <br/> 
-                task = PythonOperator(task_id='run_ltv', python_callable=update_ltv, dag=dag) <br/> 
-                </code></p>
-               </p>
-              <p class="project-details__desc-para">
-              Zeppelin:<br/>  
-              - Дашборды:<br/>  
-                1. Распределение LTV по кластерам (столбчатая диаграмма).  <br/>
-                2. Динамика LTV (график за 6 месяцев).  <br/>
-                3. Ретеншен по кластерам  <br/>
-               
-              
-              2. Результаты <br/>
-              - +12% к доходу: За счет таргетированных промо для кластеров 1 и 2.  <br/>
-              - Рост ретеншена на 7%: Персонализированные push-уведомления для кластера 3.  <br/>
-              - Сокращение CAC: Исключение неперспективных сегментов (кластер 5) из рекламных кампаний.  <br/>
-              
-             </p>
-              <p class="project-details__desc-para">
-          <strong> 2. Designed promotion strategies that increased participant engagement by 37% </strong> <br/>
-        Проект: Оптимизация промо-стратегий для роста вовлеченности на 37%<br/> 
-      Цель: Увеличить вовлеченность игроков на 37% через персонализированные промо-кампании на основе A/B-тестов, 
-                предсказательного моделирования и динамического ценообразования.  <br/> 
-              
-      1. Этапы реализации<br/> 
-      1.1. Сбор и подготовка данных <br/> 
-      Источники данных:<br/> 
-      - Игровая аналитика:<br/> 
-        - Логи сессий (длительность, частота, активность в ивентах). <br/>  
-        - Взаимодействие с промо-предложениями (клики, конверсия).  <br/> 
-      - Платежи: История транзакций, чувствительность к скидкам.  <br/> 
-      - Демография: Регион, платформа, возраст аккаунта.  <br/> 
-       </p>
-              <p class="project-details__desc-para">
-      ETL-процесс:<br/>   
-      - Инструменты: Python, SQL (Hive).  <br/> 
-      - Ключевые метрики:  <br/> 
-        <p>Пример реализации:</p>
-        <p><code>
-          user_engagement = df.groupby('user_id').agg({
-            'sessions': 'count',
-            'session_duration': 'mean',
-            'promo_clicks': 'sum',
-            'payment_amount': 'sum'
-        })
-        </code>        
-        </p>
-        
-              
-      - Нормализация: MinMaxScaler для признаков активности.  <br/> 
-       </p>
-              <p class="project-details__desc-para">
-      1.2. Сегментация аудитории <br/> 
-      Методы: <br/> 
-      1. RFM-анализ (Recency, Frequency, Monetary): <br/> 
-         - Recency: Дата последней сессии.  <br/> 
-         - Frequency: Количество сессий за 30 дней. <br/>  
-         - Monetary: Сумма платежей. <br/> 
-      2. Кластеризация (Gaussian Mixture):<br/> 
-         - Выбрана вместо K-means из-за неравномерного распределения данных. <br/>  
-         - 5 сегментов: Киты, постоянные плательщики, новички, возвращенцы, "спящие".  <br/> 
-       </p>
-              <p class="project-details__desc-para">
-      1.3. A/B-тестирование промо-механик <br/> 
-      Гипотезы: <br/> 
-      - Вариант A: Скидка 20% на первый платеж.  <br/> 
-      - Вариант B: Бесплатный эксклюзивный предмет за 3 сессии.  <br/> 
-      - Вариант C: Персонализированный бонус (на основе LTV-модели).  <br/> 
-      
-      Реализация: <br/>  
-      - Инструменты: Python (SciPy), Airflow для управления тестами.  <br/> 
-      - Распределение трафика: 30% A, 30% B, 40% C (фреймворк Celery для балансировки).  <br/> 
-      - Метрики: <br/> 
-        - Конверсия в платежи.<br/> 
-        - Retention на 7-й день.<br/> 
-            
-      
-      Результаты: <br/> 
-      - Вариант C дал +15% к конверсии vs A/B.  <br/> 
-      - Лучший Retention у B (+22% для новичков).  <br/> 
-      
-       </p>
-              <p class="project-details__desc-para">
-      1.4. Динамическое ценообразование: <br/> 
-      Алгоритм:<br/> 
-      1. Predictive Model (CatBoost):  <br/> 
-         - Предсказывает вероятность покупки для каждого пользователя.<br/>   
-         - Признаки: Активность, история платежей, реакция на прошлые промо.  <br/> 
-      2. Оптимальная скидка:<br/>  
-         - Максимизация прибыли: <code> argmax_discount (P(purchase | discount) * (price - cost) </code>  <br/> 
-         - Диапазон скидок: 5–30%.  <br/> 
-      
-      Пример работы:<br/> 
-      - Для "китов": Фиксированный бонус (не скидка).  <br/> 
-      - Для новичков: Скидка 25% + бесплатный предмет.  <br/> 
-      
-      
-      2. Результаты <br/> 
-      - +37% к вовлеченности (метрика: сессии/неделю).  <br/> 
-      - +12% конверсии в платежи для целевых сегментов.  <br/> 
-      - Снижение CAC на 20% за счет исключения "холодных" пользователей из рекламы.  <br/> 
-      
-      
-      3. Проблемы и решения <br/>   
-      - Проблема: Шум в данных из-за ботов. Решение: Фильтрация через порог активности (HWID + поведенческие паттерны).  <br/> 
-      - Проблема: Задержки в расчетах LTV. Решение: Предрасчет признаков в Hive Materialized Views.  <br/> 
-      </p>
-              <p class="project-details__desc-para">
-    <strong> 3. Анализ твинков </strong> <br/>
-                Цель: Исследование поведения игроков, использующих несколько аккаунтов (твинков), для оптимизации монетизации и удержания аудитории. <br/> 
-
-        Ключевые задачи и выводы:<br/>        
-        Доля твинков: 50% твинкующих игроков используют два аккаунта, среднее число твинков на игрока — 3.<br/> 
-        
-        Платежи: Твинки из прошлого месяца (old) приносят больше дохода (ARPPU NDA руб) по сравнению с новыми (ARPPU NDA pуб).<br/> 
-        
-        Отток: Ежемесячно теряется 30% твинков, но 25% остаются в игре.<br/> 
-        
-        Компенсация аудитории: Новые игроки и возвраты компенсируют сокращение core-аудитории (коэффициент сокращения — 0.67). <br/> 
-        
-        Техническая реализация:<br/> 
-        
-        Источники данных: Логи игровых сессий, платежи, регистрация аккаунтов, HWID (идентификаторы устройств). <br/> 
-         </p>
-              <p class="project-details__desc-para">
-        Инструменты: <br/> 
-        
-        Python (Pandas, NumPy, Scikit-learn): Для анализа данных, кластеризации игроков (например, выделение твинков по HWID) и прогнозирования LTV. <br/> 
-        
-        SQL: Для агрегации данных (например, подсчет уникальных аккаунтов, платежей). <br/> 
-        
-        Airflow: Для автоматизации ETL-процессов (ежедневное обновление метрик). <br/> 
-         </p>
-              <p class="project-details__desc-para">
-        Метрики:<br/> 
-        
-        Удержание (retention) по типам твинков (new, old, reactivation).<br/> 
-        
-        ARPU/ARPPU, доля платящих игроков. <br/> 
-        
-        Визуализация: Power BI для отчетов по динамике твинков и их вкладу в revenue. <br/> 
-                 </p>
-              <p class="project-details__desc-para">
-<strong> 4.Анализ ивента Top Gun (WFWFW) </strong> <br/>
-        Цель: Оценка эффективности ивента для вовлечения игроков, монетизации и удержания новых пользователей. <br/> 
-
-        Ключевые задачи и выводы:<br/> 
-        
-        Участие: 12% MAU на RU, 5% на West. 56% участников — твинки.<br/> 
-        
-        Новички: 47% совершили первый платеж во время ивента, 44% остались в игре.<br/> 
-        
-        Вовлеченность: Среднее время жизни (Life Time) — 14 дней (RU), 16 дней (West).<br/> 
-        
-        Жетоны: Только 36% игроков обменяли жетоны на награды (чаще из-за высокого порога — 20 жетонов за предмет).<br/> 
-         </p>
-              <p class="project-details__desc-para">
-        Техническая реализация:<br/> 
-        
-        Источники данных: Логи ивента (задачи PvP/PvE), транзакции, сессии, регистрации.<br/> 
-        
-        Инструменты:<br/> 
-
-        Python (Matplotlib, Seaborn): Для анализа воронок (например, прогресс в бонусных заданиях) и когортного анализа (Retention по дням). <br/> 
-        
-        SQL: Агрегация данных по игрокам (например, распределение по типам квестов).<br/> 
-        
-        Airflow: Планирование отчетов (ежедневный мониторинг DAU участников).<br/> 
-         </p>
-              <p class="project-details__desc-para">
-        Метрики: <br/> 
-        
-        Retention (1-day, 7-day), конверсия в платежи, среднее количество сессий.<br/> 
-        
-        Распределение жетонов по предметам (частота обмена).<br/> 
-
-        Визуализация: Графики в Jupyter Notebook для презентации маркетингу. <br/> 
- </p>
-              <p class="project-details__desc-para">
-        <strong> 5.  Оптимизация монетизации через динамическую балансировку внутриигровых цен</strong> <br/>
-                Цель: Увеличить ARPPU (Average Revenue Per Paying User) на 18% за счет адаптивного ценообразования, 
-                учитывающего поведенческие и платежные паттерны игроков.  <br/>
-            </p>
-              <p class="project-details__desc-para">
-                1. Проблема и гипотезы  <br/>
-            Проблема:  <br/>
-            - Статичные цены на внутриигровые товары не учитывают различия между игроками (например, "киты" готовы платить больше, а новички чувствительны к цене).  <br/>
-            - Низкая конверсия в платежи у новых пользователей из-за высокого порога входа.  <br/>
-            
-            Гипотезы:  <br/>
-            1. Динамическое ценообразование (на основе LTV, активности и истории платежей) увеличит ARPPU.  <br/>
-            2. Персонализированные скидки снизят отток среди новых игроков.  <br/>
-             </p>
-              <p class="project-details__desc-para">
-            2. Методы и реализация  <br/>
-            
-            2.1. Анализ ценовой эластичности  <br/>
-            Задача: Определить, как изменение цены влияет на спрос.  <br/>
-
-            Инструменты:  <br/>
-            - Python (StatsModels, Pandas) – регрессионный анализ.  <br/>
-            - SQL – агрегация данных о покупках.  <br/>
-            
-            Метрики:  <br/>
-            - Коэффициент эластичности спроса по цене:  <br/>
-              <p>\[ E = \frac{\% \Delta Q}{\% \Delta P} \]</p>
-              где:  <br/>
-              - Q – количество покупок,  <br/>
-              - P – цена.  <br/>
-            
-           
-            Выводы:  <br/>
-            - Для "китов" спрос неэластичен (|E| < 1) – можно повышать цены.  <br/>
-            - Для новичков спрос эластичен (|E| > 1) – скидки увеличат конверсию.  <br/>
-              </p>
-              <p class="project-details__desc-para">
-            2.2. Сегментация игроков для динамического ценообразования  <br/>
-                Метод: Кластеризация (K-means + RFM-анализ).  <br/>
-                Признаки:  <br/>
-                - Recency: Последняя покупка.  <br/>
-                - Frequency: Частота платежей.  <br/>
-                - Monetary: Суммарные траты.  <br/>
-                
-                Кластеры:  <br/>
-                  1. Киты (Whales): Высокий Monetary, низкая Frequency.  <br/>
-                  2. Постоянные плательщики: Средние RFM.  <br/>
-                  3. Новички: Низкий Monetary, высокая активность.  <br/>
-                  4. Спящие: Нет платежей >30 дней.  <br/>
-                </p>
-              <p class="project-details__desc-para">
-
-                Динамические правила ценообразования:  <br/>  
-          <table>
-            <tr>
-               <td>Кластер</td>
-                <td> Стратегия</td>
-              </tr>
-            <tr>
-                <td>Киты </td>
-                <td> +NDA к цене, эксклюзивные предложения</td>
-            </tr>
-            <tr>
-               <td>Новички </td>
-                <td> Скидка NDA на первый платеж  </td>
-            </tr>
-            <tr>
-               <td>Постоянные </td>
-                <td> Пакетные предложения (3 предмета по цене 2) </td>
-            </tr>
-            </table> 
-
-                
-                </p>
-              <p class="project-details__desc-para">
-                Результаты  <br/>
-                1. +18% ARPPU за счет роста среднего чека у "китов". <br/> 
-                2. +5% Retention среди новичков (скидки снизили барьер входа).  <br/>
-                3. Автоматизированная система динамического ценообразования, интегрированная в продакшен.  <br/>
-
-
- <strong> 6. Прогнозирование оттока (Churn Prediction) с ML </strong> <br/>
-Цель: Снизить churn rate на 15% за счет предиктивного анализа и персонализированных интервенций.  <br/>
-                </p>
-              <p class="project-details__desc-para">
-
-Постановка проблемы и гипотезы  <br/>
- Проблема  <br/>
-- Высокий уровень оттока (churn rate) среди игроков, особенно после первой недели.  <br/>
-- Стандартные методы удержания (общие рассылки) неэффективны.  <br/>
-- Реклама для возврата ушедших игроков (ретаргетинг) слишком дорогая.  <br/>
-
-Гипотезы  <br/>
-1. Игроки с высокой вероятностью ухода могут быть выявлены за 2-3 дня до оттока.  <br/>
-2. Персонализированные бонусы (на основе их поведения) снизят churn rate.  <br/>
-3. Автоматизация удержания (push-уведомления, email) уменьшит затраты на ремаркетинг.  <br/>
-                
-
-Методы и реализация  <br/>
-Сбор данных и feature engineering  <br/>
-Источники данных:  <br/>
-- Логи активности (время в игре, завершенные квесты, PvP/PvE активность).  <br/>
-- Платежи (история, частота, средний чек).  <br/>
-- Прогресс в ивентах (участие, награды).  <br/>
-- Социальные взаимодействия (гильдии, чаты).  <br/>
-</p>
-              <p class="project-details__desc-para">
-                
-Ключевые признаки (features):  
-
-                 <table>
-            <tr>
-               <td>Тип признака</td>
-                <td> Примеры</td>
-              </tr>
-            <tr>
-                <td>Активность </td>
-                <td> Сессии за 3 дня, время в игре, завершенные квесты</td>
-            </tr>
-            <tr>
-               <td>Монетизация </td>
-                <td> Общая сумма платежей, частота, последний платеж </td>
-            </tr>
-            <tr>
-               <td>Прогресс </td>
-                <td> Уровень, участие в ивентах, достижения  </td>
-            </tr>
-            <tr>
-               <td>Социальные </td>
-                <td> Количество друзей, активность в гильдии   </td>
-            </tr>
-            </table> 
-
-
-                </p>
-              <p class="project-details__desc-para">
-
-Построение модели Churn Prediction  <br/>
-Целевая переменная:  <br/>
-- Churn = 1 (игрок не заходил 7+ дней)  <br/>
-- Churn = 0 (активен)  <br/>
-
-Алгоритм: XGBoost (градиентный бустинг) – выбран из-за высокой интерпретируемости и работы с несбалансированными данными.  <br/>
-
-Метрики качества:  <br/>
-- AUC-ROC: 0.89 (хорошее разделение классов)  <br/>
-- Precision (точность): 0.82  <br/>
-- Recall (полнота): 0.75  <br/>
-
-Интерпретация модели - SHAP-анализ <br/>
-                
-Выводы:  <br/>
-- Наибольшее влияние на отток:  <br/>
-  1. Снижение активности (число сессий за 3 дня).  <br/>
-  2. Отсутствие платежей в последние 7 дней.  <br/>
-  3. Низкий прогресс в ивентах.  <br/>
-
-</p>
-              <p class="project-details__desc-para">
-
-                
-Результаты  <br/>
-Эффективность модели  <br/>
-- 23% игроков из "группы риска" остались в игре после интервенций.  <br/>
-- Снижение churn rate на 15% (с 25% до 21.25%).  <br/>
-
-Экономический эффект  <br/>
-- Снижение затрат на ретаргетинг на 30% (меньше ушедших → меньше расходов на рекламу).  <br/>
-- Рост LTV на 12% за счет удержания платящих пользователей.  <br/>
-
-
- <strong> 7. Атрибуция рекламных каналов </strong> <br/>
-Проблема и цели<br/>
-Исходные данные:<br/>
-Маркетинговый бюджет $NDA/мес распределен между 10+ каналами<br/>
-CPA (Cost Per Acquisition) превышает плановый на 25%, LTV/CAC = 1.2 (при целевом ≥ 1.5).<br/>
-Нет понимания, какие каналы реально приводят платящих игроков.<br/>
-
-Цели:<br/>
-Снизить CPA на 20% за счет перераспределения бюджета.<br/>
-Повысить LTV/CAC до 1.5+ через отсев неэффективных каналов.<br/>
-Определить вклад каждого канала в конверсию (атрибуция).<br/>
-</p>
-              <p class="project-details__desc-para">
-Методология<br/>
-Сбор данных<br/>
-Источники:<br/>
-Рекламные платформы (Facebook Ads, TikTok For Business, AppsFlyer).<br/>
-Игровая аналитика (SDK Firebase, внутренние логи).<br/>
-Платежи (Stripe, App Store Connect).<br/>
-
-
-Модель атрибуции (Shapley Value)<br/>
-Почему Shapley Value?<br/>
-
-Учитывает вклад каждого канала в цепочке взаимодействий (не только last-click).<br/>
-Работает с коалициями (например, TikTok → Facebook → Конверсия).<br/>
-                
-</p>
-<p class="project-details__desc-para">
-Реализация:<br/>
-<p><code>
-  from itertools import permutations<br/>
-import numpy as np<br/>
-
-def shapley_value(user_journeys, conversions):<br/>
-    channels = set([c for journey in user_journeys for c in journey])<br/>
-    shapley = {c: 0 for c in channels}<br/>
-    
-    for channel in channels:<br/>
-        for journey, conv in zip(user_journeys, conversions):<br/>
-            if channel in journey:<br/>
-                idx = journey.index(channel)<br/>
-                marginal_gain = conv - (conv * 0.5 if idx > 0 else 0)  # Упрощенный расчет<br/>
-                shapley[channel] += marginal_gain / len(user_journeys)<br/>
-    
-    return shapley<br/>
-</code></p>
-</p>
-<p class="project-details__desc-para">
-  
-Расчет LTV/CAC по кластерам<br/>
-Кластеризация игроков:<br/>
-
-Кластер 1: "Киты" (LTV $NDA, CAC $NDA).<br/>
-
-Кластер 2: "Середняки" (LTV $NDA, CAC $NDA).<br/>
-
-Кластер 3: "Новички" (LTV $NDA, CAC $NDA).<br/>
-
-Оптимизация:<br/>
-Увеличить бюджет на каналы, привлекающие Кластер 1.<br/>
-Исключить каналы с CAC > LTV .<br/>
-
-Действия по каналам<br/>
-Chanel 1:<br/>
-Увеличение бюджета на 36%.<br/>
-Запуск креативов с упором на социальные взаимодействия (гильдии, PvP).<br/>
-
-Chanel 2:<br/>
-Снижение бюджета на 18%, фокус на ретаргетинг.<br/>
-  
-Chanel 3:<br/>
-Полный отказ от 3 из 5 сетей (экономия $NDA/мес).<br/>
-
-  Итог:  
-- Перераспределение бюджета в пользу NDA (+15% к конверсии).  <br/>
-- Отказ от неэффективных партнерских сетей.  <br/>
-- Эффективность каналов после оптимизации - (CPA	-23%, LTV	+42%, Конверсия		+15%)<br/>
-
-
-                
-              </p>
-            </div>
-            <div class="project-details__tools-used">
-              <h3 class="project-details__content-title">Tools Used</h3>
-              <div class="skills">
-                <div class="skills__skill">Python</div>
-                <div class="skills__skill">SQL </div>
-                <div class="skills__skill">Airflow </div>
-                <div class="skills__skill">Zeppelin </div>
-                <div class="skills__skill">Pandas, NumPy </div>
-                <div class="skills__skill">StatsModels, SciPy </div>
-                <div class="skills__skill">Scikit-learn </div>
-                <div class="skills__skill">XGBoost, LightGBM, CatBoost, </div>
-                <div class="skills__skill">K-means </div>
-                 <div class="skills__skill">SHAP </div>
-                <div class="skills__skill">Git </div>
-              </div>
-            </div> 
-            <div class="project-details__links">
-              <h3 class="project-details__content-title">Private Repo</h3>              
-              <a
-                href="https://github.com/TanasevichPS/geo_embeddings"
-                class="btn btn--med btn--theme-inv project-details__links-btn"
-                target="_blank"
-                >Code</a
-              >
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <footer class="main-footer">
-      <div class="main-container">
-        <div class="main-footer__upper">
-          <div class="main-footer__row main-footer__row-1">
-            <h2 class="heading heading-sm main-footer__heading-sm">
-              <span>Social</span>
-            </h2>
-            <div class="main-footer__social-cont">
-              <a target="_blank" rel="noreferrer" href="https://linkedin.com/in/tanasevich-ps">
-                <img
-                  class="main-footer__icon"
-                  src="./assets/png/linkedin-ico.png"
-                  alt="icon"
-                />
-              </a>
-              <a target="_blank" rel="noreferrer" href="https://github.com/TanasevichPS">
-                <img
-                  class="main-footer__icon"
-                  src="./assets/png/github-ico.png"
-                  alt="icon"
-                />
-              </a>              
-            </div>
-          </div>
-          <div class="main-footer__row main-footer__row-2">
-            <h4 class="heading heading-sm text-lt">Polina Tanasevich</h4>
-            <p class="main-footer__short-desc">
-              PhD student in Mathematics and results-driven leader in data science and AI, specializing in scalable solutions and data-driven strategies
-            </p>
-          </div>
-        </div>
-
-        <div class="main-footer__lower">
-          &copy; Copyright 2021. Made by
-          <a rel="noreferrer" target="_blank" href="https://rammaheshwari.com"
-            >Ram Maheshwari</a
-          >
-        </div>
-      </div>
-    </footer>
-    <script src="./index.js"></script>
-  </body>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VK / MY.GAMES experience | Polina Kliuchnikova</title>
+<meta name="description" content="I developed LTV and retention models, analysed promotions and in-game events, and automated analytical workflows with Python, SQL, Spark and Airflow.">
+<meta name="theme-color" content="#5424a3">
+<link rel="canonical" href="https://tanasevichps.github.io/tapelich/job_vk.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="VK / MY.GAMES experience | Polina Kliuchnikova">
+<meta property="og:description" content="I developed LTV and retention models, analysed promotions and in-game events, and automated analytical workflows with Python, SQL, Spark and Airflow.">
+<meta property="og:url" content="https://tanasevichps.github.io/tapelich/job_vk.html">
+<meta property="og:image" content="https://tanasevichps.github.io/tapelich/assets/png/social-card.png">
+<link rel="icon" href="assets/svg/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/portfolio.css">
+<script src="index.js" defer>
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+<div class="header-inner">
+<a class="brand" href="index.html" aria-label="Polina Kliuchnikova — home">
+<span class="monogram" aria-hidden="true">pk<span>.</span>
+</span>
+<span>Polina<br>
+<strong>Kliuchnikova</strong>
+</span>
+</a>
+<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu <span aria-hidden="true">☰</span>
+</button>
+<nav id="main-nav" class="main-nav" aria-label="Main navigation">
+<a href="index.html#about">About</a>
+<a href="index.html#experience" aria-current="page">Experience</a>
+<a href="projects.html">Projects</a>
+<a href="research.html">Research</a>
+<a href="talks.html">Talks</a>
+<a class="nav-contact" href="index.html#contact">Let’s talk <span aria-hidden="true">↗</span>
+</a>
+</nav>
+</div>
+</header>
+<main id="main">
+<section class="page-hero">
+<div class="wrap">
+<p class="eyebrow">Oct 2021 — Sep 2023 / Experience</p>
+<h1>VK / MY.GAMES · Senior Data Analyst</h1>
+<p class="page-intro">I developed LTV and retention models, analysed promotions and in-game events, and automated analytical workflows with Python, SQL, Spark and Airflow.</p>
+</div>
+</section>
+<section class="section wrap">
+<div class="role-intro">
+<h2>Player behaviour, product experiments and predictive analytics.</h2>
+<ul class="role-highlights">
+<li>Player value, churn, segmentation and multi-account behaviour.</li>
+<li>Promotion analysis, pricing and marketing attribution.</li>
+<li>Recurring data pipelines and communication with product teams.</li>
+</ul>
+</div>
+<div class="section-heading">
+<h2>Projects & contributions</h2>
+<p>7 detailed case studies</p>
+</div>
+<div class="project-grid">
+<article class="project-card" data-project data-category="VK / MY.GAMES" data-search="player lifetime value modelling vk / my.games linking player behaviour, segmentation and predictive modelling to product and marketing decisions. python sql lightgbm clustering spark airflow players differ in activity, payment patterns and retention. product and marketing teams needed a more useful view of long-term value than a single average across the audience. i developed lifetime-value and retention models and worked on the analytical pipelines needed to use their outputs. i translated behavioural and payment data into features and discussed the results with product and marketing stakeholders. the work combined data preparation, player segmentation and ltv prediction. clustering represented distinct payment and activity patterns, while lightgbm supported prediction from tabular behavioural features. the original analysis considered frequent small payers, infrequent high-value payers, new users, returning players and active non-paying users. these groups helped connect predictive outputs to practical product questions. sql and automated processing supported repeatable feature calculation and reporting. the purpose of the predictions was to inform targeting, retention and planning; model scores and the causal effect of a marketing action were treated as different questions. predictive player-value analysis integrated with product work and reusable analytical pipelines. the complete original segmentation and modelling notes remain available below.">
+<div class="card-content">
+<p class="card-meta">VK / MY.GAMES <span> / </span> 2021–2023</p>
+<h3>
+<a href="vk-ltv.html">Player lifetime value modelling</a>
+</h3>
+<p>Linking player behaviour, segmentation and predictive modelling to product and marketing decisions.</p>
+<ul class="tags" aria-label="Methods and tools">
+<li>Python</li>
+<li>SQL</li>
+<li>LightGBM</li>
+</ul>
+<a class="text-link" href="vk-ltv.html">Explore project <span aria-hidden="true">↗</span>
+</a>
+</div>
+</article>
+<article class="project-card" data-project data-category="VK / MY.GAMES" data-search="promotion strategy &amp; experimentation vk / my.games analysing which offers work for different player segments and how they affect engagement and payment behaviour. python sql rfm a/b testing catboost scipy a promotion can attract participation without improving retention or long-term value. different player groups also respond differently to discounts, rewards and personalised offers. i worked on audience analysis, promotion strategies and assessment of product experiments. the analysis connected payment history, activity and segmentation to the design of offers. rfm features and clustering described player segments. the project compared promotion mechanics such as first-payment discounts, participation rewards and personalised bonuses. evaluation considered payment conversion, retention and activity. the original work also explored purchase-propensity modelling as an input to offer selection. the analysis gave product and marketing colleagues a structured way to compare promotion mechanics and understand segment-level responses. experiment design, observed behaviour and predictive scoring each contributed a different kind of evidence. the original notes preserve the campaign variants and historical measurements for a more detailed review.">
+<div class="card-content">
+<p class="card-meta">VK / MY.GAMES <span> / </span> 2021–2023</p>
+<h3>
+<a href="vk-promotions.html">Promotion strategy &amp; experimentation</a>
+</h3>
+<p>Analysing which offers work for different player segments and how they affect engagement and payment behaviour.</p>
+<ul class="tags" aria-label="Methods and tools">
+<li>Python</li>
+<li>SQL</li>
+<li>RFM</li>
+</ul>
+<a class="text-link" href="vk-promotions.html">Explore project <span aria-hidden="true">↗</span>
+</a>
+</div>
+</article>
+<article class="project-card" data-project data-category="VK / MY.GAMES" data-search="multi-account player behaviour vk / my.games understanding how alternate accounts affect audience, retention and monetisation metrics. python sql pandas airflow power bi account-level metrics can give a misleading picture of a game’s audience when one player uses several accounts. new, returning and established alternate accounts can also have different payment and retention patterns. i analysed multi-account behaviour using session, payment and registration data together with available device identifiers. the aim was to explain how alternate accounts contributed to the observed audience and revenue. the analysis distinguished new, existing and reactivated accounts and compared their payment and retention patterns. it also examined whether new and returning activity compensated for losses in the core audience. sql aggregations and python analysis supported account grouping and cohort comparisons. reporting made the effect of account definitions visible to stakeholders. a clearer interpretation of account growth, churn and monetisation. the case is useful when discussing metric definitions: an account is an observed unit in the data, and it is not automatically equivalent to a unique player.">
+<div class="card-content">
+<p class="card-meta">VK / MY.GAMES <span> / </span> 2021–2023</p>
+<h3>
+<a href="vk-multi-account.html">Multi-account player behaviour</a>
+</h3>
+<p>Understanding how alternate accounts affect audience, retention and monetisation metrics.</p>
+<ul class="tags" aria-label="Methods and tools">
+<li>Python</li>
+<li>SQL</li>
+<li>Pandas</li>
+</ul>
+<a class="text-link" href="vk-multi-account.html">Explore project <span aria-hidden="true">↗</span>
+</a>
+</div>
+</article>
+<article class="project-card" data-project data-category="VK / MY.GAMES" data-search="top gun event analysis vk / my.games evaluating event participation, progression, reward use and the behaviour of new players. sql python cohort analysis funnels matplotlib an in-game event needs to be evaluated beyond participation totals. the team needed to understand which players joined, how they progressed and whether the event supported monetisation and retention. i analysed the top gun event through task, session, payment and registration logs. the analysis compared regional audiences and separated new players from existing and alternate accounts. funnel analysis followed participation through tasks and reward redemption. cohort analysis examined first payments and retention among newcomers, while activity metrics described the intensity and duration of participation. a specific focus was the gap between earning event tokens and redeeming rewards. this helped connect the data to the design of thresholds and incentives. a structured account of the event’s audience and progression, giving the product team evidence for reviewing mechanics and rewards. historical participation and redemption figures are retained in the original notes.">
+<div class="card-content">
+<p class="card-meta">VK / MY.GAMES <span> / </span> 2021–2023</p>
+<h3>
+<a href="vk-top-gun.html">Top Gun event analysis</a>
+</h3>
+<p>Evaluating event participation, progression, reward use and the behaviour of new players.</p>
+<ul class="tags" aria-label="Methods and tools">
+<li>SQL</li>
+<li>Python</li>
+<li>Cohort analysis</li>
+</ul>
+<a class="text-link" href="vk-top-gun.html">Explore project <span aria-hidden="true">↗</span>
+</a>
+</div>
+</article>
+<article class="project-card" data-project data-category="VK / MY.GAMES" data-search="pricing &amp; monetisation analysis vk / my.games studying price sensitivity and segment-specific offers in an in-game economy. python sql statsmodels rfm regression uniform pricing and promotion rules can overlook differences between established payers and newcomers. the challenge was to understand purchasing behaviour without losing sight of retention and player experience. i analysed payment patterns, audience segments and price sensitivity to support decisions about in-game offers. the work connected behavioural data with monetisation questions posed by the product team. rfm features and clustering organised the audience into groups with different purchase histories. regression analysis explored relationships between price and observed demand. the project considered segment-specific offer rules, including different combinations of discounts and non-price rewards. observational price relationships require care because the audience and the offer exposure may change at the same time. an analytical framework for discussing pricing and offers alongside retention and long-term value. the original project notes preserve the proposed rules, evaluation figures and implementation context.">
+<div class="card-content">
+<p class="card-meta">VK / MY.GAMES <span> / </span> 2021–2023</p>
+<h3>
+<a href="vk-pricing.html">Pricing &amp; monetisation analysis</a>
+</h3>
+<p>Studying price sensitivity and segment-specific offers in an in-game economy.</p>
+<ul class="tags" aria-label="Methods and tools">
+<li>Python</li>
+<li>SQL</li>
+<li>Statsmodels</li>
+</ul>
+<a class="text-link" href="vk-pricing.html">Explore project <span aria-hidden="true">↗</span>
+</a>
+</div>
+</article>
+<article class="project-card" data-project data-category="VK / MY.GAMES" data-search="churn prediction &amp; retention vk / my.games identifying players at risk of leaving and explaining the signals behind the prediction. xgboost shap python sql classification a useful retention workflow needs to identify risk before a player has fully disengaged. general campaigns can waste effort when they ignore the differences between player behaviour patterns. i worked on churn prediction using activity, payment, progression and social features. the analysis connected classification outputs to player segments and potential retention actions. the original task defined churn through a period of inactivity and used a gradient-boosted model. recent sessions, playtime, payment history and progress supplied the predictive features. evaluation considered ranking and classification metrics, while shap supported inspection of the factors associated with a prediction. declining activity, reduced progress and changes in payment behaviour were examined in context. the model supported prioritisation of retention work. predicting who will leave and estimating who will benefit from an intervention are separate tasks, so campaign outcomes need their own evaluation. the original notes retain the historical model and campaign measurements for reference.">
+<div class="card-content">
+<p class="card-meta">VK / MY.GAMES <span> / </span> 2021–2023</p>
+<h3>
+<a href="vk-churn.html">Churn prediction &amp; retention</a>
+</h3>
+<p>Identifying players at risk of leaving and explaining the signals behind the prediction.</p>
+<ul class="tags" aria-label="Methods and tools">
+<li>XGBoost</li>
+<li>SHAP</li>
+<li>Python</li>
+</ul>
+<a class="text-link" href="vk-churn.html">Explore project <span aria-hidden="true">↗</span>
+</a>
+</div>
+</article>
+<article class="project-card" data-project data-category="VK / MY.GAMES" data-search="marketing attribution &amp; channel value vk / my.games connecting acquisition journeys, player value and campaign economics to budget decisions. python sql attribution ltv / cac segmentation acquisition volume alone does not show whether a channel brings players who stay and pay. the marketing team needed a more useful comparison of channel cost and the value of the acquired audience. i analysed acquisition journeys and channel economics, combining marketing information with player behaviour and payments. the work supported discussion of budget allocation and audience quality. the analysis compared acquisition cost with predicted or observed player value and examined differences between segments. it also explored multi-touch attribution to move beyond a purely last-click view. the original notes discuss shapley-style attribution. the short illustrative code in those notes is a heuristic, not an exact implementation of the shapley value; attribution estimates should also not be interpreted as causal effects without additional identification assumptions. a more explicit connection between channel spend, audience composition and long-term value. this provided a basis for reviewing inefficient channels and testing changes in allocation.">
+<div class="card-content">
+<p class="card-meta">VK / MY.GAMES <span> / </span> 2021–2023</p>
+<h3>
+<a href="vk-attribution.html">Marketing attribution &amp; channel value</a>
+</h3>
+<p>Connecting acquisition journeys, player value and campaign economics to budget decisions.</p>
+<ul class="tags" aria-label="Methods and tools">
+<li>Python</li>
+<li>SQL</li>
+<li>Attribution</li>
+</ul>
+<a class="text-link" href="vk-attribution.html">Explore project <span aria-hidden="true">↗</span>
+</a>
+</div>
+</article>
+</div>
+<div class="section-end">
+<a class="text-link" href="index.html#experience">All experience <span aria-hidden="true">↗</span>
+</a> <a class="text-link" href="projects.html">Full project catalogue <span aria-hidden="true">↗</span>
+</a>
+</div>
+</section>
+</main>
+<footer class="site-footer">
+<div class="wrap footer-main">
+<div>
+<a class="footer-name" href="index.html">Polina Kliuchnikova<span>.</span>
+</a>
+<p>Machine learning, applied mathematics<br>and the people who work with AI.</p>
+</div>
+<div class="footer-links">
+<a class="text-link" href="https://www.linkedin.com/in/kliuchnikova-ps/">LinkedIn <span aria-hidden="true">↗</span>
+</a>
+<a class="text-link" href="https://github.com/TanasevichPS">GitHub <span aria-hidden="true">↗</span>
+</a>
+<a class="text-link" href="https://scholar.google.com/citations?user=6XguSygAAAAJ">Google Scholar <span aria-hidden="true">↗</span>
+</a>
+<a class="text-link" href="https://istina.msu.ru/workers/251795028/">ISTINA <span aria-hidden="true">↗</span>
+</a>
+<a class="text-link" href="mailto:pskliuchnikova@outlook.com">Email <span aria-hidden="true">↗</span>
+</a>
+</div>
+</div>
+<div class="wrap footer-bottom">
+<span>© 2026 Polina Kliuchnikova</span>
+<span>Earlier publications: Polina S. Tanasevich</span>
+<a class="text-link" href="projects.html">All projects <span aria-hidden="true">↗</span>
+</a>
+</div>
+</footer>
+</body>
 </html>

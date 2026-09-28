@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Recommendations from user feedback | Polina Kliuchnikova</title>
+<meta name="description" content="Grouping noisy feedback and using an LLM to generate more relevant improvement recommendations.">
+<meta name="theme-color" content="#5424a3">
+<link rel="canonical" href="https://tanasevichps.github.io/tapelich/sber-recommendations.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Recommendations from user feedback | Polina Kliuchnikova">
+<meta property="og:description" content="Grouping noisy feedback and using an LLM to generate more relevant improvement recommendations.">
+<meta property="og:url" content="https://tanasevichps.github.io/tapelich/sber-recommendations.html">
+<meta property="og:image" content="https://tanasevichps.github.io/tapelich/assets/png/social-card.png">
+<link rel="icon" href="assets/svg/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/portfolio.css">
+<script src="index.js" defer>
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+<div class="header-inner">
+<a class="brand" href="index.html" aria-label="Polina Kliuchnikova — home">
+<span class="monogram" aria-hidden="true">pk<span>.</span>
+</span>
+<span>Polina<br>
+<strong>Kliuchnikova</strong>
+</span>
+</a>
+<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu <span aria-hidden="true">☰</span>
+</button>
+<nav id="main-nav" class="main-nav" aria-label="Main navigation">
+<a href="index.html#about">About</a>
+<a href="index.html#experience">Experience</a>
+<a href="projects.html" aria-current="page">Projects</a>
+<a href="research.html">Research</a>
+<a href="talks.html">Talks</a>
+<a class="nav-contact" href="index.html#contact">Let’s talk <span aria-hidden="true">↗</span>
+</a>
+</nav>
+</div>
+</header>
+<main id="main">
+<section class="page-hero">
+<div class="wrap">
+<p class="eyebrow">Sber / 2024–2025</p>
+<h1>Recommendations from user feedback</h1>
+<p class="page-intro">Grouping noisy feedback and using an LLM to generate more relevant improvement recommendations.</p>
+<div class="button-row">
+<a class="button button-secondary" href="projects.html">All projects <span aria-hidden="true">↗</span>
+</a>
+</div>
+</div>
+</section>
+<div class="wrap case-layout">
+<aside class="case-sidebar">
+<p class="eyebrow">Project at a glance</p>
+<dl>
+<dt>Context</dt>
+<dd>Sber</dd>
+<dt>My role</dt>
+<dd>Tech Lead / ML engineering</dd>
+<dt>Period</dt>
+<dd>2024–2025</dd>
+</dl>
+<h2 class="sidebar-title">Methods & tools</h2>
+<ul class="tags" aria-label="Methods and tools">
+<li>GigaChat</li>
+<li>HDBSCAN</li>
+<li>E5 embeddings</li>
+<li>Python</li>
+<li>Prompt design</li>
+</ul>
+<nav aria-label="On this page">
+<h2 class="sidebar-title">In this case</h2>
+<a href="#section-0">The problem</a>
+<a href="#section-1">My contribution</a>
+<a href="#section-2">Approach</a>
+<a href="#section-3">Decisions and outcome</a>
+<a href="#original-notes">Original notes</a>
+</nav>
+<button class="print-button" type="button" data-print hidden>Print / save as PDF</button>
+</aside>
+<article class="case-body">
+<section class="case-section" id="section-0">
+<h2>The problem</h2>
+<p>User feedback mixed useful observations with spelling errors, spam and duplicated themes. Recommendations generated from this input needed to remain relevant to the underlying problem.</p>
+</section>
+<section class="case-section" id="section-1">
+<h2>My contribution</h2>
+<p>I worked on a pipeline connecting feedback cleaning, thematic clustering, LLM generation and relevance assessment. The design used clustering to provide more coherent input to the generation step.</p>
+</section>
+<section class="case-section" id="section-2">
+<h2>Approach</h2>
+<p>Preprocessing normalised text and filtered obvious noise. HDBSCAN grouped related feedback while allowing outliers to remain outside the main clusters. GigaChat generated recommendations from the resulting context.</p>
+<p>Embedding similarity supported relevance checks, while expert assessment provided a closer view of whether a recommendation addressed the issue. A similarity threshold is a screening signal, not a substitute for semantic evaluation.</p>
+</section>
+<section class="case-section" id="section-3">
+<h2>Decisions and outcome</h2>
+<p>The project explored prompting and model inference as a practical alternative to a more expensive fine-tuning workflow. The resulting system linked each generated recommendation to a cleaner, more focused feedback context.</p>
+<p>Earlier expert-assessment figures and implementation notes are preserved below. The current summary emphasises the workflow and its evaluation rather than presenting an unqualified aggregate score.</p>
+</section>
+<details class="original-notes" id="original-notes">
+<summary>Original project notes <span>Detailed reference</span>
+</summary>
+<div class="notes-inner">
+<p class="note-intro">Preserved from my earlier portfolio for a complete record of the project. These historical notes include the original wording, code sketches and reported measurements, which have not been revalidated here. The edited case study above is the current overview.</p>
+<div class="archival-text" lang="ru">4. The proportion of non-relevant recommendations was reduced from 30% to 10%, according to expert assessment using
+LLM inference.
+
+Цель
+
+Снизить долю нерелевантных рекомендаций до 10% за счёт:
+
+1. Кластеризации (HDBSCAN, так как он лучше работает с noise, чем K-Means: тест на 5 датасетах).
+
+2. Генерации решений (GigaChat + prompt engineering, так как fine-tuning в 3× дороже при +2% качества).
+
+- KPI: Косинусная близость (`E5` &gt; 0.7, порог выбран по ROC-анализу).
+
+Проблема
+
+Обратная связь пользователей содержит:
+
+- 40% орфографических ошибок (анализ через `aspell`).
+
+- 15% спама** (выявлено правилами regex).
+
+- 30% нерелевантных рекомендаций** в старой системе (из-за отсутствия кластеризации).
+
+Результат
+
+После внедрения системы доля нерелевантных рекомендаций снизилась с 30% до 10% (p-value &lt; 0.05, тест на 10 000 примерах).
+
+- Метод оценки: Сравнение с ручной разметкой 3 экспертов (Cohen’s κ &gt; 0.8).
+
+- Почему LLM? Потому что:
+
+- Классические методы (например, TF-IDF + K-means) давали 30% ошибок.
+
+- GigaChat выбран как компромисс между качеством и стоимостью.
+
+Архитектура
+
+Агент (основной поток):
+
+- Суммаризация: GigaChat + шаблоны для консистентности.
+
+- Кластеризация:
+
+- Эмбеддинги – `E5` (выбран по тесту: лучше `BERT` на 12% по точности кластеризации).
+
+- Алгоритм – HDBSCAN (min_cluster_size=5, подобран через grid search).
+
+- Генерация решений:
+
+- 2 уровня детализации (общее/детальное) – чтобы избежать overfitting под разработчиков
+
+Память (кратковременная):
+
+- Redis (TTL=24h) для хранения:
+- Последних 1000 запросов.
+- Кэша эмбеддингов (снижает затраты на `E5` на 17%).
+
+Критик (QA):
+
+- Правила:
+
+- Если рекомендация ≠ эталону (есть в БД) → перегенерировать.
+
+- Если cosine similarity &lt; 0.7 → доработка (порог даёт precision 0.85).
+
+- Логирование: Все кейсы с near-threshold значениями (0.6–0.7) для анализа.
+
+Этапы
+
+1. Предобработка:
+
+- Очистка от спама (regex + ручные правила).
+
+- Исправление опечаток (`aspell` + контекстный анализ LLM).
+
+2. Кластеризация:
+
+- HDBSCAN, так как часть данных – шум (K-Means тут хуже).
+
+3. Генерация:
+
+- Для каждого кластера – 2 версии ответа (бизнес/разработка).
+
+4. Контроль качества:
+
+- Автоматический (косинусная близость).
+
+- Выборочная проверка экспертами (100 случайных кейсов/день).</div>
+</div>
+</details>
+<div class="case-bottom">
+<a class="text-link" href="projects.html">Back to all projects <span aria-hidden="true">↗</span>
+</a>
+<a class="text-link" href="index.html#contact">Contact me <span aria-hidden="true">↗</span>
+</a>
+</div>
+</article>
+</div>
+</main>
+<footer class="site-footer">
+<div class="wrap footer-main">
+<div>
+<a class="footer-name" href="index.html">Polina Kliuchnikova<span>.</span>
+</a>
+<p>Machine learning, applied mathematics<br>and the people who work with AI.</p>
+</div>
+<div class="footer-links">
+<a class="text-link" href="https://www.linkedin.com/in/kliuchnikova-ps/">LinkedIn <span aria-hidden="true">↗</span>
+</a>
+<a class="text-link" href="https://github.com/TanasevichPS">GitHub <span aria-hidden="true">↗</span>
+</a>
+<a class="text-link" href="https://scholar.google.com/citations?user=6XguSygAAAAJ">Google Scholar <span aria-hidden="true">↗</span>
+</a>
+<a class="text-link" href="https://istina.msu.ru/workers/251795028/">ISTINA <span aria-hidden="true">↗</span>
+</a>
+<a class="text-link" href="mailto:pskliuchnikova@outlook.com">Email <span aria-hidden="true">↗</span>
+</a>
+</div>
+</div>
+<div class="wrap footer-bottom">
+<span>© 2026 Polina Kliuchnikova</span>
+<span>Earlier publications: Polina S. Tanasevich</span>
+<a class="text-link" href="projects.html">All projects <span aria-hidden="true">↗</span>
+</a>
+</div>
+</footer>
+</body>
+</html>

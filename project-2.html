@@ -1,181 +1,153 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Case Study of Project 1</title>
-    <meta name="description" content="Case study page of Project" />
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Article retrieval &amp; summarisation agent | Polina Kliuchnikova</title>
+<meta name="description" content="An agent prototype that finds relevant articles and turns them into a concise topic digest.">
+<meta name="theme-color" content="#5424a3">
+<link rel="canonical" href="https://tanasevichps.github.io/tapelich/project-2.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Article retrieval &amp; summarisation agent | Polina Kliuchnikova">
+<meta property="og:description" content="An agent prototype that finds relevant articles and turns them into a concise topic digest.">
+<meta property="og:url" content="https://tanasevichps.github.io/tapelich/project-2.html">
+<meta property="og:image" content="https://tanasevichps.github.io/tapelich/assets/png/social-card.png">
+<link rel="icon" href="assets/svg/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/portfolio.css">
+<script src="index.js" defer>
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+<div class="header-inner">
+<a class="brand" href="index.html" aria-label="Polina Kliuchnikova — home">
+<span class="monogram" aria-hidden="true">pk<span>.</span>
+</span>
+<span>Polina<br>
+<strong>Kliuchnikova</strong>
+</span>
+</a>
+<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu <span aria-hidden="true">☰</span>
+</button>
+<nav id="main-nav" class="main-nav" aria-label="Main navigation">
+<a href="index.html#about">About</a>
+<a href="index.html#experience">Experience</a>
+<a href="projects.html" aria-current="page">Projects</a>
+<a href="research.html">Research</a>
+<a href="talks.html">Talks</a>
+<a class="nav-contact" href="index.html#contact">Let’s talk <span aria-hidden="true">↗</span>
+</a>
+</nav>
+</div>
+</header>
+<main id="main">
+<section class="page-hero">
+<div class="wrap">
+<p class="eyebrow">Independent / Independent work</p>
+<h1>Article retrieval &amp; summarisation agent</h1>
+<p class="page-intro">An agent prototype that finds relevant articles and turns them into a concise topic digest.</p>
+<div class="button-row">
+<a class="button button-secondary" href="projects.html">All projects <span aria-hidden="true">↗</span>
+</a>
+<a class="button button-secondary" href="https://github.com/TanasevichPS/llm_agents">View agent repository <span aria-hidden="true">↗</span>
+</a>
+</div>
+</div>
+</section>
+<div class="wrap case-layout">
+<aside class="case-sidebar">
+<p class="eyebrow">Project at a glance</p>
+<dl>
+<dt>Context</dt>
+<dd>Independent</dd>
+<dt>My role</dt>
+<dd>Personal / learning project</dd>
+<dt>Period</dt>
+<dd>Independent work</dd>
+</dl>
+<h2 class="sidebar-title">Methods & tools</h2>
+<ul class="tags" aria-label="Methods and tools">
+<li>Python</li>
+<li>Hugging Face</li>
+<li>Retrieval</li>
+<li>Summarisation</li>
+</ul>
+<nav aria-label="On this page">
+<h2 class="sidebar-title">In this case</h2>
+<a href="#section-0">Project context</a>
+<a href="#section-1">Approach</a>
+<a href="#section-2">What I explored</a>
+<a href="#section-3">Project material</a>
+<a href="#original-notes">Original notes</a>
+</nav>
+<button class="print-button" type="button" data-print hidden>Print / save as PDF</button>
+</aside>
+<article class="case-body">
+<section class="case-section" id="section-0">
+<h2>Project context</h2>
+<p>A personal learning project for retrieving and summarising a small set of articles on a user-selected topic.</p>
+</section>
+<section class="case-section" id="section-1">
+<h2>Approach</h2>
+<p>The workflow separates finding candidate articles, ranking their relevance and generating summaries. A simple input-and-results interface connects the user’s topic to a digest of five selected articles.</p>
+</section>
+<section class="case-section" id="section-2">
+<h2>What I explored</h2>
+<p>The project links information retrieval to language-model summarisation. Relevance selection and summary quality are separate concerns: a fluent summary is only useful if it represents a relevant source accurately.</p>
+</section>
+<section class="case-section" id="section-3">
+<h2>Project material</h2>
+<p>The linked repository contains my LLM-agent experiments. The original project description is also preserved below for reference.</p>
+</section>
+<details class="original-notes" id="original-notes">
+<summary>Original project notes <span>Detailed reference</span>
+</summary>
+<div class="notes-inner">
+<p class="note-intro">Preserved from my earlier portfolio for a complete record of the project. These historical notes include the original wording, code sketches and reported measurements, which have not been revalidated here. The edited case study above is the current overview.</p>
+<div class="archival-text" lang="en">Overview
 
-    <link rel="stylesheet" href="css/style.css" />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;900&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <header class="header">
-      <div class="header__content">
-        <div class="header__logo-container">
-          <div class="header__logo-img-cont">
-            <img
-              src="./assets/png/profile.png"
-              alt="Ram Maheshwari Logo Image"
-              class="header__logo-img"
-            />
-          </div>
-          <span class="header__logo-sub">Polina Tanasevich</span>
-        </div>
-        <div class="header__main">
-          <ul class="header__links">
-            <li class="header__link-wrapper">
-              <a href="./index.html" class="header__link"> Home </a>
-            </li>
-            <li class="header__link-wrapper">
-              <a href="./index.html#about" class="header__link">About </a>
-            </li>
-            <li class="header__link-wrapper">
-              <a href="./index.html#conferences" class="header__link">
-                Conferences
-              </a>
-            </li>
-            <li class="header__link-wrapper">
-              <a href="./index.html#contact" class="header__link"> Contact </a>
-            </li>
-          </ul>
-          <div class="header__main-ham-menu-cont">
-            <img
-              src="./assets/svg/ham-menu.svg"
-              alt="hamburger menu"
-              class="header__main-ham-menu"
-            />
-            <img
-              src="./assets/svg/ham-menu-close.svg"
-              alt="hamburger menu close"
-              class="header__main-ham-menu-close d-none"
-            />
-          </div>
-        </div>
-      </div>
-      <div class="header__sm-menu">
-        <div class="header__sm-menu-content">
-          <ul class="header__sm-menu-links">
-            <li class="header__sm-menu-link">
-              <a href="./index.html"> Home </a>
-            </li>
-
-            <li class="header__sm-menu-link">
-              <a href="./index.html#about"> About </a>
-            </li>
-
-            <li class="header__sm-menu-link">
-              <a href="./index.html#conferences"> Conferences </a>
-            </li>
-
-            <li class="header__sm-menu-link">
-              <a href="./index.html#contact"> Contact </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </header>
-    <section class="project-cs-hero">
-      <div class="project-cs-hero__content">
-        <h1 class="heading-primary">Top-5 Article Summarization Agent</h1>
-        <div class="project-cs-hero__info">
-          <p class="text-primary">
-            This Agent retrieves and ranks articles on a given topic using news APIs, then summarizes them with models like GPT.
-          </p>
-        </div>
-        <div class="project-cs-hero__cta">
-          <a href="https://github.com/TanasevichPS/llm_agents" class="btn btn--bg" target="_blank">Code</a>
-        </div>
-      </div>
-    </section>
-    <section class="project-details">
-      <div class="main-container">
-        <div class="project-details__content">
-          <div class="project-details__showcase-img-cont">
-            <img
-              src="./assets/jpeg/nte_start.png"
-              alt="Project Image"
-              class="project-details__showcase-img"
-            />
-          </div>
-          <div class="project-details__content-main">
-            <div class="project-details__desc">
-              <h3 class="project-details__content-title">Overview</h3>
-              <p class="project-details__desc-para">
-                A Top-5 Article Summarization Agent finds and summarizes the most relevant articles on a user-specified topic. 
-                It retrieves articles through web scraping or news APIs, ranks them by relevance, and uses models like GPT for summarization. 
-                Key features include a ranking system based on topic relevance and a simple interface for input and viewing summaries. 
-                It’s uses Hugging Face models for natural language processing.      
-              </p>
-            </div>
-            <div class="project-details__tools-used">
-              <h3 class="project-details__content-title">Tools Used</h3>
-              <div class="skills">
-                <div class="skills__skill">Python</div>
-                <div class="skills__skill">HuggingFace</div>
-                <div class="skills__skill">LLM</div>
-              </div>
-            </div>
-            <div class="project-details__links">
-              <h3 class="project-details__content-title">See Live</h3>              
-              <a
-                href="https://github.com/TanasevichPS/llm_agents"
-                class="btn btn--med btn--theme-inv project-details__links-btn"
-                target="_blank"
-                >Code</a
-              >
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <footer class="main-footer">
-      <div class="main-container">
-        <div class="main-footer__upper">
-          <div class="main-footer__row main-footer__row-1">
-            <h2 class="heading heading-sm main-footer__heading-sm">
-              <span>Social</span>
-            </h2>
-            <div class="main-footer__social-cont">
-              <a target="_blank" rel="noreferrer" href="https://linkedin.com/in/tanasevich-ps">
-                <img
-                  class="main-footer__icon"
-                  src="./assets/png/linkedin-ico.png"
-                  alt="icon"
-                />
-              </a>
-              <a target="_blank" rel="noreferrer" href="https://github.com/TanasevichPS">
-                <img
-                  class="main-footer__icon"
-                  src="./assets/png/github-ico.png"
-                  alt="icon"
-                />
-              </a>              
-            </div>
-          </div>
-          <div class="main-footer__row main-footer__row-2">
-            <h4 class="heading heading-sm text-lt">Polina Tanasevich</h4>
-            <p class="main-footer__short-desc">
-              PhD student in Mathematics and results-driven leader in data science and AI, specializing in scalable solutions and data-driven strategies
-            </p>
-          </div>
-        </div>
-
-        <div class="main-footer__lower">
-          &copy; Copyright 2021. Made by
-          <a rel="noreferrer" target="_blank" href="https://rammaheshwari.com"
-            >Ram Maheshwari</a
-          >
-        </div>
-      </div>
-    </footer>
-    <script src="./index.js"></script>
-  </body>
+                A Top-5 Article Summarization Agent finds and summarizes the most relevant articles on a user-specified topic.
+                It retrieves articles through web scraping or news APIs, ranks them by relevance, and uses models like GPT for summarization.
+                Key features include a ranking system based on topic relevance and a simple interface for input and viewing summaries.
+                It’s uses Hugging Face models for natural language processing.</div>
+</div>
+</details>
+<div class="case-bottom">
+<a class="text-link" href="projects.html">Back to all projects <span aria-hidden="true">↗</span>
+</a>
+<a class="text-link" href="index.html#contact">Contact me <span aria-hidden="true">↗</span>
+</a>
+</div>
+</article>
+</div>
+</main>
+<footer class="site-footer">
+<div class="wrap footer-main">
+<div>
+<a class="footer-name" href="index.html">Polina Kliuchnikova<span>.</span>
+</a>
+<p>Machine learning, applied mathematics<br>and the people who work with AI.</p>
+</div>
+<div class="footer-links">
+<a class="text-link" href="https://www.linkedin.com/in/kliuchnikova-ps/">LinkedIn <span aria-hidden="true">↗</span>
+</a>
+<a class="text-link" href="https://github.com/TanasevichPS">GitHub <span aria-hidden="true">↗</span>
+</a>
+<a class="text-link" href="https://scholar.google.com/citations?user=6XguSygAAAAJ">Google Scholar <span aria-hidden="true">↗</span>
+</a>
+<a class="text-link" href="https://istina.msu.ru/workers/251795028/">ISTINA <span aria-hidden="true">↗</span>
+</a>
+<a class="text-link" href="mailto:pskliuchnikova@outlook.com">Email <span aria-hidden="true">↗</span>
+</a>
+</div>
+</div>
+<div class="wrap footer-bottom">
+<span>© 2026 Polina Kliuchnikova</span>
+<span>Earlier publications: Polina S. Tanasevich</span>
+<a class="text-link" href="projects.html">All projects <span aria-hidden="true">↗</span>
+</a>
+</div>
+</footer>
+</body>
 </html>

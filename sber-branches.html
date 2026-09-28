@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Branch placement modelling | Polina Kliuchnikova</title>
+<meta name="description" content="Using location features and CatBoost to support decisions about branch placement and regional coverage.">
+<meta name="theme-color" content="#5424a3">
+<link rel="canonical" href="https://tanasevichps.github.io/tapelich/sber-branches.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Branch placement modelling | Polina Kliuchnikova">
+<meta property="og:description" content="Using location features and CatBoost to support decisions about branch placement and regional coverage.">
+<meta property="og:url" content="https://tanasevichps.github.io/tapelich/sber-branches.html">
+<meta property="og:image" content="https://tanasevichps.github.io/tapelich/assets/png/social-card.png">
+<link rel="icon" href="assets/svg/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/portfolio.css">
+<script src="index.js" defer>
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+<div class="header-inner">
+<a class="brand" href="index.html" aria-label="Polina Kliuchnikova — home">
+<span class="monogram" aria-hidden="true">pk<span>.</span>
+</span>
+<span>Polina<br>
+<strong>Kliuchnikova</strong>
+</span>
+</a>
+<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu <span aria-hidden="true">☰</span>
+</button>
+<nav id="main-nav" class="main-nav" aria-label="Main navigation">
+<a href="index.html#about">About</a>
+<a href="index.html#experience">Experience</a>
+<a href="projects.html" aria-current="page">Projects</a>
+<a href="research.html">Research</a>
+<a href="talks.html">Talks</a>
+<a class="nav-contact" href="index.html#contact">Let’s talk <span aria-hidden="true">↗</span>
+</a>
+</nav>
+</div>
+</header>
+<main id="main">
+<section class="page-hero">
+<div class="wrap">
+<p class="eyebrow">Sber / 2024–2025</p>
+<h1>Branch placement modelling</h1>
+<p class="page-intro">Using location features and CatBoost to support decisions about branch placement and regional coverage.</p>
+<div class="button-row">
+<a class="button button-secondary" href="projects.html">All projects <span aria-hidden="true">↗</span>
+</a>
+<a class="button button-secondary" href="sber-location-production.html">Related: regional expansion <span aria-hidden="true">↗</span>
+</a>
+</div>
+</div>
+</section>
+<div class="wrap case-layout">
+<aside class="case-sidebar">
+<p class="eyebrow">Project at a glance</p>
+<dl>
+<dt>Context</dt>
+<dd>Sber</dd>
+<dt>My role</dt>
+<dd>Tech Lead / ML engineering</dd>
+<dt>Period</dt>
+<dd>2024–2025</dd>
+</dl>
+<h2 class="sidebar-title">Methods & tools</h2>
+<ul class="tags" aria-label="Methods and tools">
+<li>CatBoost</li>
+<li>Python</li>
+<li>SQL</li>
+<li>Geospatial features</li>
+<li>SHAP</li>
+</ul>
+<nav aria-label="On this page">
+<h2 class="sidebar-title">In this case</h2>
+<a href="#section-0">The problem</a>
+<a href="#section-1">My contribution</a>
+<a href="#section-2">Data and modelling</a>
+<a href="#section-3">Evaluation and use</a>
+<a href="#section-4">Outcome</a>
+<a href="#original-notes">Original notes</a>
+</nav>
+<button class="print-button" type="button" data-print hidden>Print / save as PDF</button>
+</aside>
+<article class="case-body">
+<section class="case-section" id="section-0">
+<h2>The problem</h2>
+<p>Opening, moving or retaining a branch requires a consistent assessment of location potential. Manual analysis and an ageing model made it difficult to compare alternatives on the same basis.</p>
+</section>
+<section class="case-section" id="section-1">
+<h2>My contribution</h2>
+<p>I developed a modelling approach for branch placement using customer, geographic and area-level data. The work connected feature engineering and predictive modelling to a decision process used by business stakeholders.</p>
+</section>
+<section class="case-section" id="section-2">
+<h2>Data and modelling</h2>
+<p>Inputs included historical customer interactions, population and infrastructure indicators, competitors and accessibility. Feature engineering organised these sources into location-level representations.</p>
+<p>CatBoost was used to model branch potential, with regression and classification formulations considered for the underlying business questions. SHAP supported discussion of which location characteristics influenced a prediction.</p>
+</section>
+<section class="case-section" id="section-3">
+<h2>Evaluation and use</h2>
+<p>The model’s predictive quality needed to be assessed separately from the downstream decision to open or relocate a branch. The workflow therefore linked model evaluation to interpretable outputs for analysts.</p>
+<p>This case focuses on the placement decision and model development. The regional-expansion case covers subsequent engineering concerns around maintaining a location-scoring system.</p>
+</section>
+<section class="case-section" id="section-4">
+<h2>Outcome</h2>
+<p>A more consistent data-driven basis for comparing branch locations, with interpretable model outputs available to the decision process.</p>
+</section>
+<details class="original-notes" id="original-notes">
+<summary>Original project notes <span>Detailed reference</span>
+</summary>
+<div class="notes-inner">
+<p class="note-intro">Preserved from my earlier portfolio for a complete record of the project. These historical notes include the original wording, code sketches and reported measurements, which have not been revalidated here. The edited case study above is the current overview.</p>
+<div class="archival-text" lang="ru">5. Developed and deployed a CatBoost model for optimizing internal branch placement, achieving a 11% improvement in prediction accuracy
+and 6% cost reduction in logistics by replacing manual processes with data-driven automation.
+
+Проект: Оптимизация размещения внутренних структурных подразделений (ВСП) c помощью CatBoost
+
+1. Бизнес-проблема и цель
+
+Проблема: Ранее решения по открытию или переносам ВСП принимались на основе устаревшей модели и ручных проверок аналитиков.
+Такой подход приводил к субъективным ошибкам, неэффективному распределению ресурсов и завышенным расходам на логистику.
+
+Цель проекта: Построить автоматизированное, основанное на данных решение, позволяющее предсказывать потенциальную эффективность
+новых или существующих ВСП, оптимизировать их размещение и тем самым сократить логистические расходы.
+
+2. Подход к решению задачи
+
+Почему CatBoost: нативная обработка категориальных признаков, устойчивость к переобучению благодаря регуляризации и early stopping,
+прозрачность через SHAP-аналитику.
+
+Двойная задача:
+
+- Регрессия — предсказание ключевой метрики (посещаемость, выручка).
+
+- Классификация — оценка целесообразности открытия/сохранения ВСП (да/нет).
+
+3. Источники данных и предобработка
+
+- CRM: история взаимодействий, даты первых и последних контактов, сегментация клиентов (новые, вернувшиеся, активные).
+
+- Геоданные: координаты клиентов, плотность населения, точки конкурентов, транспортная доступность.
+
+- Внешние датасеты: социально-экономические показатели районов (доход на душу, уровень безработицы), инфраструктура (парковки, ТЦ).
+
+Предобработка:
+
+Сбор и очистка (Python, регулярные выражения).
+
+Токенизация и нормализация (для текстовых признаков).
+
+Маскирование PII для соответствия GDPR.
+
+Заполнение пропусков специальным маркером и статистические импутации.
+
+4. Feature Engineering
+
+Геопризнаки:
+
+Расстояние до ближайших конкурентов, парковок, остановок общественного транспорта (Haversine).
+
+Оценки плотности клиентов в радиусах 1/3/5 км (Kernel Density Estimation).
+
+Временные признаки:
+
+Сезонные факторы (праздничные периоды, выходные vs рабочие дни).
+
+Тренд активности по месяцам/кварталам.
+
+Агрегированные клиентские метрики:
+
+Средний чек, частота визитов, LTV каждого сегмента.
+
+Категориальные признаки:
+
+Тип района (жилой, бизнес, ТЦ), город/регион.
+
+5. Обучение и валидация модели
+
+Разбиение данных:
+
+TimeSeriesSplit с 5 фолдами для учёта временной зависимости.
+
+Выделение OOT (out‑of‑time) теста для финальной проверки.
+
+Гиперпараметры:
+
+GridSearch по depth, learning_rate, l2_leaf_reg, iterations, scale_pos_weight.
+
+Метрики качества:
+
+- Регрессия: RMSE, MAE, R².
+
+- Классификация: ROC‑AUC, Precision‑Recall, F1.
+
+6. Этапы проекта и коммуникация
+
+Сбор требований и анализ существующей практики (1 неделя)
+
+Интервью с аналитиками и логистами, просмотр исторических решений.
+
+Сбор данных и подготовка инфраструктуры (2 недели)
+
+Настройка ETL‑пайплайна на Apache Airflow, контейнеризация модулей в Docker.
+
+Предобработка и сегментация (1,5 недели)
+
+Реализация скриптов на Python, обмен данными с CRM и GIS.
+
+Feature Engineering и первичные модели (2 недели)
+
+Прототипирование признаков, быстрые модели LightGBM для оценки важности фич.
+
+Разработка финальной модели CatBoost (2 недели)
+
+Обучение, кросс‑валидация, подбор гиперпараметров.
+
+Тестирование и оценка в shadow‑режиме (2 недели)
+
+Параллельный запуск модели и текущего процесса, сравнение решений и верификация бизнес‑эффекта.
+
+Внедрение и интеграция (1 неделя)
+
+Деплой в Kubernetes, настройка автоматических расчётов раз в месяц, генерация отчётов.
+
+Обучение персонала и поддержка (0,5 недели)
+
+Проведение воркшопов для логистов и аналитиков, документация по интерпретации SHAP‑отчётов.
+
+7. Ограничения и вызовы
+
+- Несбалансированность классов: новых точек мало, требовалось поднять scale_pos_weight и генерировать синтетические примеры (SMOTE).
+
+- Разные частоты обновления данных: CRM обновлялась раз в сутки, а геоданные — еженедельно; выравнивание временных меток и агрегация стали узким местом.
+
+- Производительность ETL: нагрузка на базу CRM требовала внедрения кеширования и батчевой записи.
+
+Самые сложные моменты:
+
+Синхронизация обновлений: пришлось строить очередь задач с приоритезацией по типу данных и гарантировать консистентность фичей.
+
+Интерпретируемость: логисты опасались «чёрного ящика», поэтому мы добавили регулярные SHAP‑чанки и визуализации важности признаков.
+
+8. Результаты и бизнес‑эффект
+
+- Точность предсказаний выросла на 11 %.
+
+- Логистические затраты сократились на 6 %.
+
+- 80 % решений по размещению перешли на автоматический режим.
+
+- Интерактивная карта‑дашборд с рекомендациями для региональных менеджеров.
+
+- Автоматизация процесса размещения ВСП и переход на data‑driven подход не только повысили точность решений, но и
+существенно сэкономили ресурсы компании, уменьшили время принятия решений и улучшили прозрачность внутренних процессов.</div>
+</div>
+</details>
+<div class="case-bottom">
+<a class="text-link" href="projects.html">Back to all projects <span aria-hidden="true">↗</span>
+</a>
+<a class="text-link" href="index.html#contact">Contact me <span aria-hidden="true">↗</span>
+</a>
+</div>
+</article>
+</div>
+</main>
+<footer class="site-footer">
+<div class="wrap footer-main">
+<div>
+<a class="footer-name" href="index.html">Polina Kliuchnikova<span>.</span>
+</a>
+<p>Machine learning, applied mathematics<br>and the people who work with AI.</p>
+</div>
+<div class="footer-links">
+<a class="text-link" href="https://www.linkedin.com/in/kliuchnikova-ps/">LinkedIn <span aria-hidden="true">↗</span>
+</a>
+<a class="text-link" href="https://github.com/TanasevichPS">GitHub <span aria-hidden="true">↗</span>
+</a>
+<a class="text-link" href="https://scholar.google.com/citations?user=6XguSygAAAAJ">Google Scholar <span aria-hidden="true">↗</span>
+</a>
+<a class="text-link" href="https://istina.msu.ru/workers/251795028/">ISTINA <span aria-hidden="true">↗</span>
+</a>
+<a class="text-link" href="mailto:pskliuchnikova@outlook.com">Email <span aria-hidden="true">↗</span>
+</a>
+</div>
+</div>
+<div class="wrap footer-bottom">
+<span>© 2026 Polina Kliuchnikova</span>
+<span>Earlier publications: Polina S. Tanasevich</span>
+<a class="text-link" href="projects.html">All projects <span aria-hidden="true">↗</span>
+</a>
+</div>
+</footer>
+</body>
+</html>

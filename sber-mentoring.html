@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Technical leadership &amp; mentoring | Polina Kliuchnikova</title>
+<meta name="description" content="Helping a multidisciplinary team turn research methods into practical ML work.">
+<meta name="theme-color" content="#5424a3">
+<link rel="canonical" href="https://tanasevichps.github.io/tapelich/sber-mentoring.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Technical leadership &amp; mentoring | Polina Kliuchnikova">
+<meta property="og:description" content="Helping a multidisciplinary team turn research methods into practical ML work.">
+<meta property="og:url" content="https://tanasevichps.github.io/tapelich/sber-mentoring.html">
+<meta property="og:image" content="https://tanasevichps.github.io/tapelich/assets/png/social-card.png">
+<link rel="icon" href="assets/svg/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/portfolio.css">
+<script src="index.js" defer>
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+<div class="header-inner">
+<a class="brand" href="index.html" aria-label="Polina Kliuchnikova — home">
+<span class="monogram" aria-hidden="true">pk<span>.</span>
+</span>
+<span>Polina<br>
+<strong>Kliuchnikova</strong>
+</span>
+</a>
+<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu <span aria-hidden="true">☰</span>
+</button>
+<nav id="main-nav" class="main-nav" aria-label="Main navigation">
+<a href="index.html#about">About</a>
+<a href="index.html#experience">Experience</a>
+<a href="projects.html" aria-current="page">Projects</a>
+<a href="research.html">Research</a>
+<a href="talks.html">Talks</a>
+<a class="nav-contact" href="index.html#contact">Let’s talk <span aria-hidden="true">↗</span>
+</a>
+</nav>
+</div>
+</header>
+<main id="main">
+<section class="page-hero">
+<div class="wrap">
+<p class="eyebrow">Sber / 2024–2025</p>
+<h1>Technical leadership &amp; mentoring</h1>
+<p class="page-intro">Helping a multidisciplinary team turn research methods into practical ML work.</p>
+<div class="button-row">
+<a class="button button-secondary" href="projects.html">All projects <span aria-hidden="true">↗</span>
+</a>
+</div>
+</div>
+</section>
+<div class="wrap case-layout">
+<aside class="case-sidebar">
+<p class="eyebrow">Project at a glance</p>
+<dl>
+<dt>Context</dt>
+<dd>Sber</dd>
+<dt>My role</dt>
+<dd>Tech Lead, Machine Learning</dd>
+<dt>Period</dt>
+<dd>2024–2025</dd>
+</dl>
+<h2 class="sidebar-title">Methods & tools</h2>
+<ul class="tags" aria-label="Methods and tools">
+<li>Technical leadership</li>
+<li>Mentoring</li>
+<li>ML reviews</li>
+<li>Process mining</li>
+</ul>
+<nav aria-label="On this page">
+<h2 class="sidebar-title">In this case</h2>
+<a href="#section-0">The need</a>
+<a href="#section-1">My contribution</a>
+<a href="#section-2">Practical learning</a>
+<a href="#section-3">Outcome</a>
+<a href="#original-notes">Original notes</a>
+</nav>
+<button class="print-button" type="button" data-print hidden>Print / save as PDF</button>
+</aside>
+<article class="case-body">
+<section class="case-section" id="section-0">
+<h2>The need</h2>
+<p>A team working across classical ML, NLP, LLMs and research needs shared technical practices as well as individual expertise. New methods become useful when colleagues can connect them to their own data and business questions.</p>
+</section>
+<section class="case-section" id="section-1">
+<h2>My contribution</h2>
+<p>As a technical lead, I supported project scoping, technical decisions, communication with stakeholders and development of team members. I organised learning activities around multimodal embeddings and process mining.</p>
+</section>
+<section class="case-section" id="section-2">
+<h2>Practical learning</h2>
+<p>Sessions covered event representations, dimensionality reduction, language-model features and inference trade-offs. Process-mining work connected event logs to discovery of business-process bottlenecks.</p>
+<p>The learning format combined an explanation of the method with application to a concrete problem. This gave colleagues a way to discuss assumptions, implementation choices and evaluation rather than memorising a tool list.</p>
+</section>
+<section class="case-section" id="section-3">
+<h2>Outcome</h2>
+<p>A shared technical vocabulary and practical support for moving projects from investigation toward implementation. The work combined technical mentoring with the day-to-day decisions needed to deliver applied ML projects.</p>
+</section>
+<details class="original-notes" id="original-notes">
+<summary>Original project notes <span>Detailed reference</span>
+</summary>
+<div class="notes-inner">
+<p class="note-intro">Preserved from my earlier portfolio for a complete record of the project. These historical notes include the original wording, code sketches and reported measurements, which have not been revalidated here. The edited case study above is the current overview.</p>
+<div class="archival-text" lang="ru">6. Mentored team members and implemented professional development programs to foster growth and innovation.
+
+Цель: Повысить уровень технической компетенции команды Data Science в ключевых направлениях:
+
+1. Мультимодальное машинное обучение и эмбеддинги
+
+2. Process Mining для оптимизации бизнес-процессов
+
+3. Практическое применение методов в бизнес-задачах
+
+Детализация семинаров.
+
+Мультимодальные модели и эмбеддинги. Теория:
+
+- Контрастивное обучение (COLES, NSP, SOP)
+
+- Методы сжатия эмбеддингов (PCA, UMAP)
+
+- Квантование LLM (INT8/Bitsandbytes)
+
+Практика:
+
+- Объединение LLM-эмбеддингов (GigaChat, Mistral) с транзакционными данными
+
+- Ускорение инференса в 4x через INT8-квантование
+
+Пример квантования
+model = AutoModelForCausalLM.from_pretrained(
+
+&quot;meta-llama/Llama-2-7b&quot;,
+
+load_in_8bit=True,
+
+device_map=&quot;auto&quot;
+
+)
+
+Process Mining и оптимизация взаимодействий. Кейс для разбора:
+
+&quot;Анализ ошибок в цепочках сотрудник-клиент через Process Mining и ML&quot;
+
+Техническая реализация:
+
+1. Data Collection:
+
+- Сбор технических логов (временные метки, действия, ошибки)
+
+- Обогащение данными из CRM и систем мониторинга
+
+Process Mining этапы:
+
+A[Логи] --&gt; B(Process Discovery)
+B --&gt; C[Визуализация customer journey]
+C --&gt; D(Performance Analysis)
+D --&gt; E[Выявление узких мест]
+E --&gt; F(Conformance Checking)
+
+ML-модели:
+
+- Бинарная классификация ошибок (CatBoost + SHAP)
+
+- Anomaly detection: Isolation Forest для &quot;сломанных&quot; сценариев
+
+- Оптимизация путей: Рекомендательная система на графах (NetworkX)
+
+Результаты проекта:
+
+- Сокращение времени обработки ошибки: NDA минут
+
+- Упрощение customer journey: -3.2 шагов
+
+- Годовая экономия: &gt;$NDA
+
+Результаты семинаров
+
+1. Экспертиза команды:
+- Освоение Process Mining: 100% участников
+
+- Внедрение методик в проекты:
+
+- Оптимизация воронки продаж (-3 шага)
+
+- Автоматизация обработки претензий (+25% скорость)
+
+2. Бизнес-эффект:
+
+- Ускорение анализа процессов: 40%
+
+- Снижение ошибок в customer journey: 15%
+
+- Единый стек технологий для кросс-функциональных задач</div>
+</div>
+</details>
+<div class="case-bottom">
+<a class="text-link" href="projects.html">Back to all projects <span aria-hidden="true">↗</span>
+</a>
+<a class="text-link" href="index.html#contact">Contact me <span aria-hidden="true">↗</span>
+</a>
+</div>
+</article>
+</div>
+</main>
+<footer class="site-footer">
+<div class="wrap footer-main">
+<div>
+<a class="footer-name" href="index.html">Polina Kliuchnikova<span>.</span>
+</a>
+<p>Machine learning, applied mathematics<br>and the people who work with AI.</p>
+</div>
+<div class="footer-links">
+<a class="text-link" href="https://www.linkedin.com/in/kliuchnikova-ps/">LinkedIn <span aria-hidden="true">↗</span>
+</a>
+<a class="text-link" href="https://github.com/TanasevichPS">GitHub <span aria-hidden="true">↗</span>
+</a>
+<a class="text-link" href="https://scholar.google.com/citations?user=6XguSygAAAAJ">Google Scholar <span aria-hidden="true">↗</span>
+</a>
+<a class="text-link" href="https://istina.msu.ru/workers/251795028/">ISTINA <span aria-hidden="true">↗</span>
+</a>
+<a class="text-link" href="mailto:pskliuchnikova@outlook.com">Email <span aria-hidden="true">↗</span>
+</a>
+</div>
+</div>
+<div class="wrap footer-bottom">
+<span>© 2026 Polina Kliuchnikova</span>
+<span>Earlier publications: Polina S. Tanasevich</span>
+<a class="text-link" href="projects.html">All projects <span aria-hidden="true">↗</span>
+</a>
+</div>
+</footer>
+</body>
+</html>

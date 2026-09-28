@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Location scoring in production | Polina Kliuchnikova</title>
+<meta name="description" content="Taking a model for regional expansion from an analytical codebase to a maintainable prediction workflow.">
+<meta name="theme-color" content="#5424a3">
+<link rel="canonical" href="https://tanasevichps.github.io/tapelich/sber-location-production.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Location scoring in production | Polina Kliuchnikova">
+<meta property="og:description" content="Taking a model for regional expansion from an analytical codebase to a maintainable prediction workflow.">
+<meta property="og:url" content="https://tanasevichps.github.io/tapelich/sber-location-production.html">
+<meta property="og:image" content="https://tanasevichps.github.io/tapelich/assets/png/social-card.png">
+<link rel="icon" href="assets/svg/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/portfolio.css">
+<script src="index.js" defer>
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+<div class="header-inner">
+<a class="brand" href="index.html" aria-label="Polina Kliuchnikova — home">
+<span class="monogram" aria-hidden="true">pk<span>.</span>
+</span>
+<span>Polina<br>
+<strong>Kliuchnikova</strong>
+</span>
+</a>
+<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu <span aria-hidden="true">☰</span>
+</button>
+<nav id="main-nav" class="main-nav" aria-label="Main navigation">
+<a href="index.html#about">About</a>
+<a href="index.html#experience">Experience</a>
+<a href="projects.html" aria-current="page">Projects</a>
+<a href="research.html">Research</a>
+<a href="talks.html">Talks</a>
+<a class="nav-contact" href="index.html#contact">Let’s talk <span aria-hidden="true">↗</span>
+</a>
+</nav>
+</div>
+</header>
+<main id="main">
+<section class="page-hero">
+<div class="wrap">
+<p class="eyebrow">Sber / 2024–2025</p>
+<h1>Location scoring in production</h1>
+<p class="page-intro">Taking a model for regional expansion from an analytical codebase to a maintainable prediction workflow.</p>
+<div class="button-row">
+<a class="button button-secondary" href="projects.html">All projects <span aria-hidden="true">↗</span>
+</a>
+</div>
+</div>
+</section>
+<div class="wrap case-layout">
+<aside class="case-sidebar">
+<p class="eyebrow">Project at a glance</p>
+<dl>
+<dt>Context</dt>
+<dd>Sber</dd>
+<dt>My role</dt>
+<dd>Tech Lead / ML engineering</dd>
+<dt>Period</dt>
+<dd>2024–2025</dd>
+</dl>
+<h2 class="sidebar-title">Methods & tools</h2>
+<ul class="tags" aria-label="Methods and tools">
+<li>CatBoost</li>
+<li>GeoPandas</li>
+<li>H3</li>
+<li>Docker</li>
+<li>Airflow</li>
+<li>MLflow</li>
+<li>pytest</li>
+</ul>
+<nav aria-label="On this page">
+<h2 class="sidebar-title">In this case</h2>
+<a href="#section-0">The problem</a>
+<a href="#section-1">My contribution</a>
+<a href="#section-2">Engineering approach</a>
+<a href="#section-3">Production workflow</a>
+<a href="#section-4">Outcome</a>
+<a href="#original-notes">Original notes</a>
+</nav>
+<button class="print-button" type="button" data-print hidden>Print / save as PDF</button>
+</aside>
+<article class="case-body">
+<section class="case-section" id="section-0">
+<h2>The problem</h2>
+<p>A location-potential model needed a reliable implementation for evaluating expansion into new regions. Beyond prediction quality, the system needed consistent inputs, repeatable feature computation and a practical update process.</p>
+</section>
+<section class="case-section" id="section-1">
+<h2>My contribution</h2>
+<p>I refactored the processing code and feature-engineering workflow, improved spatial-data handling and supported production deployment. The work also included model evaluation, interpretability and experiment tracking.</p>
+</section>
+<section class="case-section" id="section-2">
+<h2>Engineering approach</h2>
+<p>Processing improvements included vectorised operations, parallel computation and caching. A unified interface for geospatial data used GeoPandas and H3, while input checks caught inconsistencies earlier in the workflow.</p>
+<p>Model work included time-based validation, additional embedding features, CatBoost hyperparameter tuning and metrics aligned with the business task. SHAP supported interpretation of location scores.</p>
+</section>
+<section class="case-section" id="section-3">
+<h2>Production workflow</h2>
+<p>The implementation brought together automated tests, containerised deployment, scheduled data processing and tracking of model versions and experiments. Monitoring and prediction logs supported investigation of changes in data and model behaviour.</p>
+<p>MLflow provided experiment and artefact tracking; additional checks and reporting supported monitoring. These responsibilities are distinct and are not attributed to one tool alone.</p>
+</section>
+<section class="case-section" id="section-4">
+<h2>Outcome</h2>
+<p>A more maintainable scoring workflow for regional analysis, with a clearer route from data updates to model outputs and explanations. This case preserves the engineering work separately from the branch-placement modelling case.</p>
+</section>
+<details class="original-notes" id="original-notes">
+<summary>Original project notes <span>Detailed reference</span>
+</summary>
+<div class="notes-inner">
+<p class="note-intro">Preserved from my earlier portfolio for a complete record of the project. These historical notes include the original wording, code sketches and reported measurements, which have not been revalidated here. The edited case study above is the current overview.</p>
+<div class="archival-text" lang="ru">8. Промышленное внедрение ML-модели оценки потенциала локаций для экспансии в новые регионы
+
+Цель проекта - Создание production-системы для оценки привлекательности новых локаций для открытия
+точек присутствия компании с учетом региональных особенностей.
+
+Бизнес-проблемы:
+
+- Высокие риски неокупаемости из-за недостаточной аналитической базы
+
+- Субъективность решений при выборе локаций
+
+- Долгий цикл ручного анализа новых регионов
+
+Технический вклад в проект
+
+1. Рефакторинг и доработка кодовой базы
+
+- Оптимизировала пайплайн обработки данных, сократив время выполнения на 35% за счет:
+
+- Векторизации операций с pandas вместо итераций
+
+- Параллелизации вычислений с joblib
+
+- Кэширования промежуточных результатов
+
+2. Переработала архитектуру feature engineering:
+
+- Реализовалв унифицированный интерфейс для работы с геоданными через geopandas и h3
+
+- Добавила автоматическую валидацию входных данных
+
+- Оптимизировал расчет пространственных признаков (расстояний до POI)
+
+3. Оптимизация ML-модели. Улучшила качество модели:
+
+- Добавила кросс-валидацию с временными срезами
+
+- Добавила мультимодальные эмбеддинги в качестве доп. фичей
+
+- Оптимизировала гиперпараметры CatBoost с помощью GridSearchCV
+
+- Реализовала кастомные метрики для бизнес-требований
+
+Разработка production-решения
+
+- Настроила CI/CD:
+
+- Автотесты (pytest) с покрытием &gt;80%
+
+- Docker-образы (многоэтапная сборка)
+
+- Развертывание в Kubernetes с health-checks
+
+- Реализовала мониторинг на MLFlow:
+
+- Трекинг экспериментов (параметры, метрики, артефакты)
+
+- Версионирование моделей с аннотациями
+
+- Детекция дрейфа данных (распределения, важность признаков)
+
+- Логирование прогнозов и интеграция с Airflow
+
+- Кастомные колбэки, сравнение версий моделей, визуализация метрик
+
+- Обеспечила интерпретируемость:
+- SHAP-анализ важности признаков
+- Автогенерация отчетов о влиянии факторов
+
+Результаты
+
+- Увеличение точности прогноза на 15% по сравнению с исходной реализацией
+
+- Обеспечение отказоустойчивости (uptime &gt; 99.9%)
+
+- Автоматизация процесса переобучения модели</div>
+</div>
+</details>
+<div class="case-bottom">
+<a class="text-link" href="projects.html">Back to all projects <span aria-hidden="true">↗</span>
+</a>
+<a class="text-link" href="index.html#contact">Contact me <span aria-hidden="true">↗</span>
+</a>
+</div>
+</article>
+</div>
+</main>
+<footer class="site-footer">
+<div class="wrap footer-main">
+<div>
+<a class="footer-name" href="index.html">Polina Kliuchnikova<span>.</span>
+</a>
+<p>Machine learning, applied mathematics<br>and the people who work with AI.</p>
+</div>
+<div class="footer-links">
+<a class="text-link" href="https://www.linkedin.com/in/kliuchnikova-ps/">LinkedIn <span aria-hidden="true">↗</span>
+</a>
+<a class="text-link" href="https://github.com/TanasevichPS">GitHub <span aria-hidden="true">↗</span>
+</a>
+<a class="text-link" href="https://scholar.google.com/citations?user=6XguSygAAAAJ">Google Scholar <span aria-hidden="true">↗</span>
+</a>
+<a class="text-link" href="https://istina.msu.ru/workers/251795028/">ISTINA <span aria-hidden="true">↗</span>
+</a>
+<a class="text-link" href="mailto:pskliuchnikova@outlook.com">Email <span aria-hidden="true">↗</span>
+</a>
+</div>
+</div>
+<div class="wrap footer-bottom">
+<span>© 2026 Polina Kliuchnikova</span>
+<span>Earlier publications: Polina S. Tanasevich</span>
+<a class="text-link" href="projects.html">All projects <span aria-hidden="true">↗</span>
+</a>
+</div>
+</footer>
+</body>
+</html>

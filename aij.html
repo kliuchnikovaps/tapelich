@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Journey 2024 | Polina Kliuchnikova</title>
+<meta name="description" content="A joint talk with Maxim Kalashnikov about learning from event sequences. My part combined CoLES and GigaChat embeddings for geospatial prediction.">
+<meta name="theme-color" content="#5424a3">
+<link rel="canonical" href="https://tanasevichps.github.io/tapelich/aij.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="AI Journey 2024 | Polina Kliuchnikova">
+<meta property="og:description" content="A joint talk with Maxim Kalashnikov about learning from event sequences. My part combined CoLES and GigaChat embeddings for geospatial prediction.">
+<meta property="og:url" content="https://tanasevichps.github.io/tapelich/aij.html">
+<meta property="og:image" content="https://tanasevichps.github.io/tapelich/assets/png/social-card.png">
+<link rel="icon" href="assets/svg/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/portfolio.css">
+<script src="index.js" defer>
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+<div class="header-inner">
+<a class="brand" href="index.html" aria-label="Polina Kliuchnikova — home">
+<span class="monogram" aria-hidden="true">pk<span>.</span>
+</span>
+<span>Polina<br>
+<strong>Kliuchnikova</strong>
+</span>
+</a>
+<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu <span aria-hidden="true">☰</span>
+</button>
+<nav id="main-nav" class="main-nav" aria-label="Main navigation">
+<a href="index.html#about">About</a>
+<a href="index.html#experience">Experience</a>
+<a href="projects.html">Projects</a>
+<a href="research.html">Research</a>
+<a href="talks.html" aria-current="page">Talks</a>
+<a class="nav-contact" href="index.html#contact">Let’s talk <span aria-hidden="true">↗</span>
+</a>
+</nav>
+</div>
+</header>
+<main id="main">
+<section class="page-hero">
+<div class="wrap">
+<p class="eyebrow">AI Journey 2024</p>
+<h1>Multimodal embeddings for banking transactions and geodata</h1>
+<p class="page-intro">A joint talk with Maxim Kalashnikov about learning from event sequences. My part combined CoLES and GigaChat embeddings for geospatial prediction.</p>
+<p class="event-meta">11–13 December 2024 · Moscow · Science track</p>
+<div class="button-row">
+<a class="button" href="https://vkvideo.ru/video-22522055_456244721">Watch recording <span aria-hidden="true">↗</span>
+</a>
+<a class="button button-secondary" href="https://aij.ru/archive?albumId=7&amp;videoId=788">Conference recording archive <span aria-hidden="true">↗</span>
+</a>
+<a class="button button-secondary" href="https://t.me/sb_ai_lab/58">Sber AI Lab recap <span aria-hidden="true">↗</span>
+</a>
+</div>
+</div>
+</section>
+<section class="section wrap talk-detail">
+<div class="reading-width">
+<h2>About the presentation</h2>
+<p>Maxim Kalashnikov and I presented two applications of multimodal event representations. My part combined CoLES event embeddings with GigaChat representations for geospatial tasks, including prediction of purchasing activity and commercial property prices.</p>
+<p>Maxim introduced the Multimodal Banking Dataset (MBD). Together, the two parts connected transaction sequences, geographic information and language representations to the analysis of customer behaviour and spatial patterns.</p>
+<p>Sber AI Lab’s conference recap confirms the joint presentation and describes the contributions of both speakers. The recording and conference recap are available through the links above.</p>
+<details class="original-title">
+<summary>Original talk title</summary>
+<p lang="ru">Мультимодальные эмбеддинги для банковских операций и геоданных: понимание нужд клиентов и анализ пространственных паттернов через последовательности событий</p>
+</details>
+</div>
+<figure class="talk-image">
+<img src="assets/jpeg/aij.png" alt="AI Journey 2024 presentation visual" loading="lazy">
+</figure>
+</section>
+<section class="section section-tint">
+<div class="wrap">
+<h2 class="related-heading">Explore the related work</h2>
+<div class="project-grid">
+<article class="project-card" data-project data-category="Sber" data-search="multimodal geospatial intelligence sber combining event sequences, geographic context and language-model embeddings for location-level prediction. pytorch-lifestream coles gigachat h3 pca hadoop location-level forecasts need to account for both what happens in an area and what makes that area distinctive. transaction sequences, points of interest, location types and text descriptions contain complementary information that is lost in simple tabular aggregates. i developed the event-embedding and language-model feature pipeline and worked with data engineers, deployment engineers and business stakeholders to connect it to forecasting tasks. my responsibilities included translating the business question into a model workflow and discussing how to evaluate its usefulness. i used pytorch-lifestream to learn representations of event sequences, exploring coles and sequence-order objectives. h3 cells supported spatial aggregation, while pca reduced representation size before combining features. text features added a semantic view of locations. the project explored gigachat and open language models alongside event embeddings. the combined representations were used as features in downstream prediction, including purchasing activity and commercial property prices. the workflow moved from event-only representations to multimodal features, followed by downstream evaluation and integration into data pipelines. embeddings were stored for reuse and periodic updates. the important comparison is between a defined baseline and the same task with additional modalities. forecast quality, inference cost and data-update requirements need to be considered together; improvements on different prediction targets should not be combined into one headline number. a reusable approach to representing locations through their observed activity and semantic context. i presented this work at datafest 2024 and, with maxim kalashnikov, at ai journey 2024.">
+<div class="card-content">
+<p class="card-meta">Sber <span> / </span> 2024–2025</p>
+<h3>
+<a href="sber-geo.html">Multimodal geospatial intelligence</a>
+</h3>
+<p>Combining event sequences, geographic context and language-model embeddings for location-level prediction.</p>
+<ul class="tags" aria-label="Methods and tools">
+<li>PyTorch-LifeStream</li>
+<li>CoLES</li>
+<li>GigaChat</li>
+</ul>
+<a class="text-link" href="sber-geo.html">Explore project <span aria-hidden="true">↗</span>
+</a>
+</div>
+</article>
+</div>
+<div class="section-end">
+<a class="text-link" href="talks.html">All talks <span aria-hidden="true">↗</span>
+</a>
+</div>
+</div>
+</section>
+</main>
+<footer class="site-footer">
+<div class="wrap footer-main">
+<div>
+<a class="footer-name" href="index.html">Polina Kliuchnikova<span>.</span>
+</a>
+<p>Machine learning, applied mathematics<br>and the people who work with AI.</p>
+</div>
+<div class="footer-links">
+<a class="text-link" href="https://www.linkedin.com/in/kliuchnikova-ps/">LinkedIn <span aria-hidden="true">↗</span>
+</a>
+<a class="text-link" href="https://github.com/TanasevichPS">GitHub <span aria-hidden="true">↗</span>
+</a>
+<a class="text-link" href="https://scholar.google.com/citations?user=6XguSygAAAAJ">Google Scholar <span aria-hidden="true">↗</span>
+</a>
+<a class="text-link" href="https://istina.msu.ru/workers/251795028/">ISTINA <span aria-hidden="true">↗</span>
+</a>
+<a class="text-link" href="mailto:pskliuchnikova@outlook.com">Email <span aria-hidden="true">↗</span>
+</a>
+</div>
+</div>
+<div class="wrap footer-bottom">
+<span>© 2026 Polina Kliuchnikova</span>
+<span>Earlier publications: Polina S. Tanasevich</span>
+<a class="text-link" href="projects.html">All projects <span aria-hidden="true">↗</span>
+</a>
+</div>
+</footer>
+</body>
+</html>

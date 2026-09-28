@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Churn prediction &amp; retention | Polina Kliuchnikova</title>
+<meta name="description" content="Identifying players at risk of leaving and explaining the signals behind the prediction.">
+<meta name="theme-color" content="#5424a3">
+<link rel="canonical" href="https://tanasevichps.github.io/tapelich/vk-churn.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Churn prediction &amp; retention | Polina Kliuchnikova">
+<meta property="og:description" content="Identifying players at risk of leaving and explaining the signals behind the prediction.">
+<meta property="og:url" content="https://tanasevichps.github.io/tapelich/vk-churn.html">
+<meta property="og:image" content="https://tanasevichps.github.io/tapelich/assets/png/social-card.png">
+<link rel="icon" href="assets/svg/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/portfolio.css">
+<script src="index.js" defer>
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+<div class="header-inner">
+<a class="brand" href="index.html" aria-label="Polina Kliuchnikova — home">
+<span class="monogram" aria-hidden="true">pk<span>.</span>
+</span>
+<span>Polina<br>
+<strong>Kliuchnikova</strong>
+</span>
+</a>
+<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu <span aria-hidden="true">☰</span>
+</button>
+<nav id="main-nav" class="main-nav" aria-label="Main navigation">
+<a href="index.html#about">About</a>
+<a href="index.html#experience">Experience</a>
+<a href="projects.html" aria-current="page">Projects</a>
+<a href="research.html">Research</a>
+<a href="talks.html">Talks</a>
+<a class="nav-contact" href="index.html#contact">Let’s talk <span aria-hidden="true">↗</span>
+</a>
+</nav>
+</div>
+</header>
+<main id="main">
+<section class="page-hero">
+<div class="wrap">
+<p class="eyebrow">VK / MY.GAMES / 2021–2023</p>
+<h1>Churn prediction &amp; retention</h1>
+<p class="page-intro">Identifying players at risk of leaving and explaining the signals behind the prediction.</p>
+<div class="button-row">
+<a class="button button-secondary" href="projects.html">All projects <span aria-hidden="true">↗</span>
+</a>
+</div>
+</div>
+</section>
+<div class="wrap case-layout">
+<aside class="case-sidebar">
+<p class="eyebrow">Project at a glance</p>
+<dl>
+<dt>Context</dt>
+<dd>VK / MY.GAMES</dd>
+<dt>My role</dt>
+<dd>Senior Data Analyst</dd>
+<dt>Period</dt>
+<dd>2021–2023</dd>
+</dl>
+<h2 class="sidebar-title">Methods & tools</h2>
+<ul class="tags" aria-label="Methods and tools">
+<li>XGBoost</li>
+<li>SHAP</li>
+<li>Python</li>
+<li>SQL</li>
+<li>Classification</li>
+</ul>
+<nav aria-label="On this page">
+<h2 class="sidebar-title">In this case</h2>
+<a href="#section-0">The problem</a>
+<a href="#section-1">My contribution</a>
+<a href="#section-2">Approach</a>
+<a href="#section-3">Evaluation and outcome</a>
+<a href="#original-notes">Original notes</a>
+</nav>
+<button class="print-button" type="button" data-print hidden>Print / save as PDF</button>
+</aside>
+<article class="case-body">
+<section class="case-section" id="section-0">
+<h2>The problem</h2>
+<p>A useful retention workflow needs to identify risk before a player has fully disengaged. General campaigns can waste effort when they ignore the differences between player behaviour patterns.</p>
+</section>
+<section class="case-section" id="section-1">
+<h2>My contribution</h2>
+<p>I worked on churn prediction using activity, payment, progression and social features. The analysis connected classification outputs to player segments and potential retention actions.</p>
+</section>
+<section class="case-section" id="section-2">
+<h2>Approach</h2>
+<p>The original task defined churn through a period of inactivity and used a gradient-boosted model. Recent sessions, playtime, payment history and progress supplied the predictive features.</p>
+<p>Evaluation considered ranking and classification metrics, while SHAP supported inspection of the factors associated with a prediction. Declining activity, reduced progress and changes in payment behaviour were examined in context.</p>
+</section>
+<section class="case-section" id="section-3">
+<h2>Evaluation and outcome</h2>
+<p>The model supported prioritisation of retention work. Predicting who will leave and estimating who will benefit from an intervention are separate tasks, so campaign outcomes need their own evaluation.</p>
+<p>The original notes retain the historical model and campaign measurements for reference.</p>
+</section>
+<details class="original-notes" id="original-notes">
+<summary>Original project notes <span>Detailed reference</span>
+</summary>
+<div class="notes-inner">
+<p class="note-intro">Preserved from my earlier portfolio for a complete record of the project. These historical notes include the original wording, code sketches and reported measurements, which have not been revalidated here. The edited case study above is the current overview.</p>
+<div class="archival-text" lang="ru">6. Прогнозирование оттока (Churn Prediction) с ML
+
+Цель: Снизить churn rate на 15% за счет предиктивного анализа и персонализированных интервенций.
+
+Постановка проблемы и гипотезы
+
+Проблема
+
+- Высокий уровень оттока (churn rate) среди игроков, особенно после первой недели.
+
+- Стандартные методы удержания (общие рассылки) неэффективны.
+
+- Реклама для возврата ушедших игроков (ретаргетинг) слишком дорогая.
+
+Гипотезы
+
+1. Игроки с высокой вероятностью ухода могут быть выявлены за 2-3 дня до оттока.
+
+2. Персонализированные бонусы (на основе их поведения) снизят churn rate.
+
+3. Автоматизация удержания (push-уведомления, email) уменьшит затраты на ремаркетинг.
+
+Методы и реализация
+
+Сбор данных и feature engineering
+
+Источники данных:
+
+- Логи активности (время в игре, завершенные квесты, PvP/PvE активность).
+
+- Платежи (история, частота, средний чек).
+
+- Прогресс в ивентах (участие, награды).
+
+- Социальные взаимодействия (гильдии, чаты).
+
+Ключевые признаки (features):
+
+Тип признака
+Примеры
+
+Активность
+Сессии за 3 дня, время в игре, завершенные квесты
+
+Монетизация
+Общая сумма платежей, частота, последний платеж
+
+Прогресс
+Уровень, участие в ивентах, достижения
+
+Социальные
+Количество друзей, активность в гильдии
+
+Построение модели Churn Prediction
+
+Целевая переменная:
+
+- Churn = 1 (игрок не заходил 7+ дней)
+
+- Churn = 0 (активен)
+
+Алгоритм: XGBoost (градиентный бустинг) – выбран из-за высокой интерпретируемости и работы с несбалансированными данными.
+
+Метрики качества:
+
+- AUC-ROC: 0.89 (хорошее разделение классов)
+
+- Precision (точность): 0.82
+
+- Recall (полнота): 0.75
+
+Интерпретация модели - SHAP-анализ
+
+Выводы:
+
+- Наибольшее влияние на отток:
+
+1. Снижение активности (число сессий за 3 дня).
+
+2. Отсутствие платежей в последние 7 дней.
+
+3. Низкий прогресс в ивентах.
+
+Результаты
+
+Эффективность модели
+
+- 23% игроков из &quot;группы риска&quot; остались в игре после интервенций.
+
+- Снижение churn rate на 15% (с 25% до 21.25%).
+
+Экономический эффект
+
+- Снижение затрат на ретаргетинг на 30% (меньше ушедших → меньше расходов на рекламу).
+
+- Рост LTV на 12% за счет удержания платящих пользователей.</div>
+</div>
+</details>
+<div class="case-bottom">
+<a class="text-link" href="projects.html">Back to all projects <span aria-hidden="true">↗</span>
+</a>
+<a class="text-link" href="index.html#contact">Contact me <span aria-hidden="true">↗</span>
+</a>
+</div>
+</article>
+</div>
+</main>
+<footer class="site-footer">
+<div class="wrap footer-main">
+<div>
+<a class="footer-name" href="index.html">Polina Kliuchnikova<span>.</span>
+</a>
+<p>Machine learning, applied mathematics<br>and the people who work with AI.</p>
+</div>
+<div class="footer-links">
+<a class="text-link" href="https://www.linkedin.com/in/kliuchnikova-ps/">LinkedIn <span aria-hidden="true">↗</span>
+</a>
+<a class="text-link" href="https://github.com/TanasevichPS">GitHub <span aria-hidden="true">↗</span>
+</a>
+<a class="text-link" href="https://scholar.google.com/citations?user=6XguSygAAAAJ">Google Scholar <span aria-hidden="true">↗</span>
+</a>
+<a class="text-link" href="https://istina.msu.ru/workers/251795028/">ISTINA <span aria-hidden="true">↗</span>
+</a>
+<a class="text-link" href="mailto:pskliuchnikova@outlook.com">Email <span aria-hidden="true">↗</span>
+</a>
+</div>
+</div>
+<div class="wrap footer-bottom">
+<span>© 2026 Polina Kliuchnikova</span>
+<span>Earlier publications: Polina S. Tanasevich</span>
+<a class="text-link" href="projects.html">All projects <span aria-hidden="true">↗</span>
+</a>
+</div>
+</footer>
+</body>
+</html>

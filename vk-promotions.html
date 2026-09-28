@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Promotion strategy &amp; experimentation | Polina Kliuchnikova</title>
+<meta name="description" content="Analysing which offers work for different player segments and how they affect engagement and payment behaviour.">
+<meta name="theme-color" content="#5424a3">
+<link rel="canonical" href="https://tanasevichps.github.io/tapelich/vk-promotions.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Promotion strategy &amp; experimentation | Polina Kliuchnikova">
+<meta property="og:description" content="Analysing which offers work for different player segments and how they affect engagement and payment behaviour.">
+<meta property="og:url" content="https://tanasevichps.github.io/tapelich/vk-promotions.html">
+<meta property="og:image" content="https://tanasevichps.github.io/tapelich/assets/png/social-card.png">
+<link rel="icon" href="assets/svg/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/portfolio.css">
+<script src="index.js" defer>
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+<div class="header-inner">
+<a class="brand" href="index.html" aria-label="Polina Kliuchnikova — home">
+<span class="monogram" aria-hidden="true">pk<span>.</span>
+</span>
+<span>Polina<br>
+<strong>Kliuchnikova</strong>
+</span>
+</a>
+<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu <span aria-hidden="true">☰</span>
+</button>
+<nav id="main-nav" class="main-nav" aria-label="Main navigation">
+<a href="index.html#about">About</a>
+<a href="index.html#experience">Experience</a>
+<a href="projects.html" aria-current="page">Projects</a>
+<a href="research.html">Research</a>
+<a href="talks.html">Talks</a>
+<a class="nav-contact" href="index.html#contact">Let’s talk <span aria-hidden="true">↗</span>
+</a>
+</nav>
+</div>
+</header>
+<main id="main">
+<section class="page-hero">
+<div class="wrap">
+<p class="eyebrow">VK / MY.GAMES / 2021–2023</p>
+<h1>Promotion strategy &amp; experimentation</h1>
+<p class="page-intro">Analysing which offers work for different player segments and how they affect engagement and payment behaviour.</p>
+<div class="button-row">
+<a class="button button-secondary" href="projects.html">All projects <span aria-hidden="true">↗</span>
+</a>
+</div>
+</div>
+</section>
+<div class="wrap case-layout">
+<aside class="case-sidebar">
+<p class="eyebrow">Project at a glance</p>
+<dl>
+<dt>Context</dt>
+<dd>VK / MY.GAMES</dd>
+<dt>My role</dt>
+<dd>Senior Data Analyst</dd>
+<dt>Period</dt>
+<dd>2021–2023</dd>
+</dl>
+<h2 class="sidebar-title">Methods & tools</h2>
+<ul class="tags" aria-label="Methods and tools">
+<li>Python</li>
+<li>SQL</li>
+<li>RFM</li>
+<li>A/B testing</li>
+<li>CatBoost</li>
+<li>SciPy</li>
+</ul>
+<nav aria-label="On this page">
+<h2 class="sidebar-title">In this case</h2>
+<a href="#section-0">The problem</a>
+<a href="#section-1">My contribution</a>
+<a href="#section-2">Approach</a>
+<a href="#section-3">Decisions and outcome</a>
+<a href="#original-notes">Original notes</a>
+</nav>
+<button class="print-button" type="button" data-print hidden>Print / save as PDF</button>
+</aside>
+<article class="case-body">
+<section class="case-section" id="section-0">
+<h2>The problem</h2>
+<p>A promotion can attract participation without improving retention or long-term value. Different player groups also respond differently to discounts, rewards and personalised offers.</p>
+</section>
+<section class="case-section" id="section-1">
+<h2>My contribution</h2>
+<p>I worked on audience analysis, promotion strategies and assessment of product experiments. The analysis connected payment history, activity and segmentation to the design of offers.</p>
+</section>
+<section class="case-section" id="section-2">
+<h2>Approach</h2>
+<p>RFM features and clustering described player segments. The project compared promotion mechanics such as first-payment discounts, participation rewards and personalised bonuses.</p>
+<p>Evaluation considered payment conversion, retention and activity. The original work also explored purchase-propensity modelling as an input to offer selection.</p>
+</section>
+<section class="case-section" id="section-3">
+<h2>Decisions and outcome</h2>
+<p>The analysis gave product and marketing colleagues a structured way to compare promotion mechanics and understand segment-level responses. Experiment design, observed behaviour and predictive scoring each contributed a different kind of evidence.</p>
+<p>The original notes preserve the campaign variants and historical measurements for a more detailed review.</p>
+</section>
+<details class="original-notes" id="original-notes">
+<summary>Original project notes <span>Detailed reference</span>
+</summary>
+<div class="notes-inner">
+<p class="note-intro">Preserved from my earlier portfolio for a complete record of the project. These historical notes include the original wording, code sketches and reported measurements, which have not been revalidated here. The edited case study above is the current overview.</p>
+<div class="archival-text" lang="ru">2. Designed promotion strategies that increased participant engagement by 37%
+
+Проект: Оптимизация промо-стратегий для роста вовлеченности на 37%
+
+Цель: Увеличить вовлеченность игроков на 37% через персонализированные промо-кампании на основе A/B-тестов,
+предсказательного моделирования и динамического ценообразования.
+
+1. Этапы реализации
+
+1.1. Сбор и подготовка данных
+
+Источники данных:
+
+- Игровая аналитика:
+
+- Логи сессий (длительность, частота, активность в ивентах).
+
+- Взаимодействие с промо-предложениями (клики, конверсия).
+
+- Платежи: История транзакций, чувствительность к скидкам.
+
+- Демография: Регион, платформа, возраст аккаунта.
+
+ETL-процесс:
+
+- Инструменты: Python, SQL (Hive).
+
+- Ключевые метрики:
+
+Пример реализации:
+
+user_engagement = df.groupby(&#39;user_id&#39;).agg({
+&#39;sessions&#39;: &#39;count&#39;,
+&#39;session_duration&#39;: &#39;mean&#39;,
+&#39;promo_clicks&#39;: &#39;sum&#39;,
+&#39;payment_amount&#39;: &#39;sum&#39;
+})
+
+- Нормализация: MinMaxScaler для признаков активности.
+
+1.2. Сегментация аудитории
+
+Методы:
+
+1. RFM-анализ (Recency, Frequency, Monetary):
+
+- Recency: Дата последней сессии.
+
+- Frequency: Количество сессий за 30 дней.
+
+- Monetary: Сумма платежей.
+
+2. Кластеризация (Gaussian Mixture):
+
+- Выбрана вместо K-means из-за неравномерного распределения данных.
+
+- 5 сегментов: Киты, постоянные плательщики, новички, возвращенцы, &quot;спящие&quot;.
+
+1.3. A/B-тестирование промо-механик
+
+Гипотезы:
+
+- Вариант A: Скидка 20% на первый платеж.
+
+- Вариант B: Бесплатный эксклюзивный предмет за 3 сессии.
+
+- Вариант C: Персонализированный бонус (на основе LTV-модели).
+
+Реализация:
+
+- Инструменты: Python (SciPy), Airflow для управления тестами.
+
+- Распределение трафика: 30% A, 30% B, 40% C (фреймворк Celery для балансировки).
+
+- Метрики:
+
+- Конверсия в платежи.
+
+- Retention на 7-й день.
+
+Результаты:
+
+- Вариант C дал +15% к конверсии vs A/B.
+
+- Лучший Retention у B (+22% для новичков).
+
+1.4. Динамическое ценообразование:
+
+Алгоритм:
+
+1. Predictive Model (CatBoost):
+
+- Предсказывает вероятность покупки для каждого пользователя.
+
+- Признаки: Активность, история платежей, реакция на прошлые промо.
+
+2. Оптимальная скидка:
+
+- Максимизация прибыли: argmax_discount (P(purchase | discount) * (price - cost)
+
+- Диапазон скидок: 5–30%.
+
+Пример работы:
+
+- Для &quot;китов&quot;: Фиксированный бонус (не скидка).
+
+- Для новичков: Скидка 25% + бесплатный предмет.
+
+2. Результаты
+
+- +37% к вовлеченности (метрика: сессии/неделю).
+
+- +12% конверсии в платежи для целевых сегментов.
+
+- Снижение CAC на 20% за счет исключения &quot;холодных&quot; пользователей из рекламы.
+
+3. Проблемы и решения
+
+- Проблема: Шум в данных из-за ботов. Решение: Фильтрация через порог активности (HWID + поведенческие паттерны).
+
+- Проблема: Задержки в расчетах LTV. Решение: Предрасчет признаков в Hive Materialized Views.</div>
+</div>
+</details>
+<div class="case-bottom">
+<a class="text-link" href="projects.html">Back to all projects <span aria-hidden="true">↗</span>
+</a>
+<a class="text-link" href="index.html#contact">Contact me <span aria-hidden="true">↗</span>
+</a>
+</div>
+</article>
+</div>
+</main>
+<footer class="site-footer">
+<div class="wrap footer-main">
+<div>
+<a class="footer-name" href="index.html">Polina Kliuchnikova<span>.</span>
+</a>
+<p>Machine learning, applied mathematics<br>and the people who work with AI.</p>
+</div>
+<div class="footer-links">
+<a class="text-link" href="https://www.linkedin.com/in/kliuchnikova-ps/">LinkedIn <span aria-hidden="true">↗</span>
+</a>
+<a class="text-link" href="https://github.com/TanasevichPS">GitHub <span aria-hidden="true">↗</span>
+</a>
+<a class="text-link" href="https://scholar.google.com/citations?user=6XguSygAAAAJ">Google Scholar <span aria-hidden="true">↗</span>
+</a>
+<a class="text-link" href="https://istina.msu.ru/workers/251795028/">ISTINA <span aria-hidden="true">↗</span>
+</a>
+<a class="text-link" href="mailto:pskliuchnikova@outlook.com">Email <span aria-hidden="true">↗</span>
+</a>
+</div>
+</div>
+<div class="wrap footer-bottom">
+<span>© 2026 Polina Kliuchnikova</span>
+<span>Earlier publications: Polina S. Tanasevich</span>
+<a class="text-link" href="projects.html">All projects <span aria-hidden="true">↗</span>
+</a>
+</div>
+</footer>
+</body>
+</html>
