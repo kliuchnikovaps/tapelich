@@ -2,7 +2,7 @@
 
 A static personal site covering ML engineering, applied research, professional projects and conference presentations.
 
-The homepage features four projects. The full catalogue contains 32 projects and areas of work, including seven Huawei cases, all eight Sber contributions and seven VK / MY.GAMES projects. Earlier detailed descriptions are preserved in expandable original notes on the relevant pages.
+The homepage features four projects. The full catalogue brings together projects and areas of work from Huawei, Sber, VK / MY.GAMES, research and independent work. Earlier detailed descriptions are preserved in expandable original notes on the relevant pages.
 
 ## Run locally
 

@@ -39,7 +39,7 @@ export const additionalTools = ['TensorFlow', 'JAX', 'LangChain', 'NLTK', 'Gensi
 export const publications = [
   { status: 'In press', year: 'Forthcoming', title: 'Adaptation of Artificial Intelligence Agents to Individual Operators’s Cognitive States Using Reinforcement Learning', authors: 'S. V. Kovalchuk, D. V. Fedrushkov, P. S. Kliuchnikova & A. T. S. Ireddy', detail: 'Cognitive critics and reinforcement learning from AI feedback.', href: 'research-cognitive-critic.html' },
   { status: 'Published', year: '2022', title: 'Numerical analysis of the effective thermal properties and the stability for NTE metamaterials using CAE fidesys', authors: 'M. Ya. Yakovlev, P. S. Tanasevich, A. V. Vershinin & V. A. Levin', detail: 'AIP Conference Proceedings 2509, 020210. DOI: 10.1063/5.0084835.', href: 'science-1.html' },
-  { status: 'Conference abstract', year: '2023', title: 'Solving the inverse problem of estimating effective properties of auxetic metamaterials using machine learning algorithms', authors: 'P. S. Tanasevich, M. Ya. Yakovlev & A. V. Vershinin', detail: 'XIII All-Russian Congress on Theoretical and Applied Mechanics, pp. 822–824. Original in Russian.', href: 'tomsk_2023.html' }
+  { status: 'Conference abstract', year: '2026', title: 'A role-based model of human–AI interaction in hybrid cognitive systems: a software development scenario', authors: 'P. I. Zaitsev, P. S. Kliuchnikova, D. V. Fedrushkov, O. V. Kubryak & S. V. Kovalchuk', detail: 'XI International Conference on Cognitive Science · MAKI / NEIMARK, pp. 232–234. Original in Russian.', href: 'https://disk.yandex.ru/i/PI8BHcjKApD3eA' }
 ];
 
 export const talks = [
@@ -59,7 +59,7 @@ export const talks = [
     photo: 'assets/jpeg/conferences/cogsci-2026-speaking.jpg',
     photoAlt: 'Polina Kliuchnikova presenting her human–AI role model beside a slide on game-theoretic equilibria at the XI International Conference on Cognitive Science.',
     photoCaption: 'Presenting the role-based model of human–AI collaboration in Nizhny Novgorod, August 2026.',
-    sources: [['Conference website', 'https://cogsci.neimark-it.ru/'], ['Official programme', 'https://disk.yandex.ru/i/WxBNqiVYyOjlTA']],
+    sources: [['Published abstract · pp. 232–234', 'https://disk.yandex.ru/i/PI8BHcjKApD3eA'], ['Conference website', 'https://cogsci.neimark-it.ru/'], ['Official programme', 'https://disk.yandex.ru/i/WxBNqiVYyOjlTA']],
     related: ['research-oversight'], label: 'Human–AI interaction · MAKI'
   },
   {
