@@ -287,7 +287,7 @@ export const projects = [
       S('Approach', 'The agent uses a language-model interface to interpret travel preferences, suggest destinations, draft itineraries and answer follow-up questions. Hugging Face models and APIs provide the language-model component.'),
       S('What I explored', 'The project focuses on shaping a task-oriented conversation and organising generated recommendations into a useful plan. Access to live weather, pricing or availability depends on explicit external integrations and is not assumed.'),
       S('Project material', 'The linked repository contains my LLM-agent work. This case remains in the full catalogue alongside professional projects so that the earlier experiments are easy to revisit.')
-    ], { role: 'Personal / learning project', period: 'Independent work', note: 'project-1', links: [['View agent repository', 'https://github.com/TanasevichPS/llm_agents']] }),
+    ], { role: 'Personal / learning project', period: 'Independent work', note: 'project-1', links: [['View agent repository', 'https://github.com/kliuchnikovaps/llm_agents']] }),
   P('project-2', 'Independent', 'Article retrieval & summarisation agent',
     'An agent prototype that finds relevant articles and turns them into a concise topic digest.',
     ['Python', 'Hugging Face', 'Retrieval', 'Summarisation'], [
@@ -295,5 +295,5 @@ export const projects = [
       S('Approach', 'The workflow separates finding candidate articles, ranking their relevance and generating summaries. A simple input-and-results interface connects the user’s topic to a digest of five selected articles.'),
       S('What I explored', 'The project links information retrieval to language-model summarisation. Relevance selection and summary quality are separate concerns: a fluent summary is only useful if it represents a relevant source accurately.'),
       S('Project material', 'The linked repository contains my LLM-agent experiments. The original project description is also preserved below for reference.')
-    ], { role: 'Personal / learning project', period: 'Independent work', note: 'project-2', links: [['View agent repository', 'https://github.com/TanasevichPS/llm_agents']] })
+    ], { role: 'Personal / learning project', period: 'Independent work', note: 'project-2', links: [['View agent repository', 'https://github.com/kliuchnikovaps/llm_agents']] })
 ];

@@ -3,12 +3,12 @@ export const profile = {
   title: 'Staff ML Engineer & Researcher',
   email: 'pskliuchnikova@outlook.com',
   description: 'Staff ML Engineer at Huawei and PhD student at ITMO. LLM post-training, evaluation, human–AI interaction and production machine learning.',
-  base: 'https://tanasevichps.github.io/tapelich/',
+  base: 'https://kliuchnikovaps.github.io/tapelich/',
   updated: '2026-09-28',
   cv: 'assets/documents/Polina_Kliuchnikova_CV.pdf',
   socials: [
     ['LinkedIn', 'https://www.linkedin.com/in/kliuchnikova-ps/'],
-    ['GitHub', 'https://github.com/TanasevichPS'],
+    ['GitHub', 'https://github.com/kliuchnikovaps'],
     ['Google Scholar', 'https://scholar.google.com/citations?user=6XguSygAAAAJ'],
     ['ISTINA', 'https://istina.msu.ru/workers/251795028/']
   ]
