@@ -54,7 +54,7 @@ export const talks = [
       'The presentation was part of the “Cognitive Modelling: Mathematical Approaches — 2” session. The programme lists P. I. Zaitsev, P. S. Kliuchnikova, D. V. Fedrushkov, O. V. Kubryak and S. V. Kovalchuk.'
     ],
     // Add a local path or an HTTPS URL to show each button. Empty fields stay hidden.
-    video: '', slides: '',
+    video: 'https://drive.google.com/file/d/17IqIKLZZq8Ma6SWkwm1J02g_ZS5jE41b/view?usp=drive_link', slides: '',
     certificate: 'assets/documents/conferences/cogsci-2026-speaker-certificate.png',
     photo: 'assets/jpeg/conferences/cogsci-2026-speaking.jpg',
     photoAlt: 'Polina Kliuchnikova presenting her human–AI role model beside a slide on game-theoretic equilibria at the XI International Conference on Cognitive Science.',
